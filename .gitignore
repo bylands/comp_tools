@@ -12,3 +12,7 @@ wheels/
 # Jupyter helper files
 .ipynb_checkpoints/
 
+# ignore large files
+mpcorb.txt
+mpcorb.csv
+
