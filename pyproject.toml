@@ -8,6 +8,7 @@ dependencies = [
     "altair>=5.5.0",
     "astroquery>=0.4.10",
     "jupyterlab>=4.4.3",
+    "marimo>=0.14.10",
     "matplotlib>=3.10.3",
     "numpy>=2.2.6",
     "polars>=1.30.0",
