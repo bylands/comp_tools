@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\usepackage{mathspec,xltxtra,xunicode}  % Unterstützung für OpenType
+\usepackage[european resistors, american inductors]{circuitikz}
+\usepackage{siunitx}
+
+\setmainfont{Minion Pro}[
+		Numbers={OldStyle,Proportional}
+]
+
+\setmathsfont(Digits,Latin,Greek)[Numbers={OldStyle,Proportional}]{Minion Pro}
+\exchangeforms{phi,theta}
+
+\begin{document}
+\begin{circuitikz}[voltage shift=1, line width=0.5]
+    \tikzset{R/.append style={bipoles/length=0.8cm}}
+    \draw
+    (0,0) to [short] (0,1) to [battery1, invert, l={$\Delta V_0$}] (0,4) 
+    to [lamp, l={$L_1$}, v={$\Delta V_1$}] (6,4) to [short, -*] (6,4)
+    to [lamp, l={$L_2$}, v={$\Delta V_2$}, i={$I_2$}] (6,2) 
+    to [lamp, l={$L_3$}, v={$\Delta V_3$}] (6,0) to [short, -*] (6,0)
+    to [short, i={$I_0$}] (0,0);
+    \draw
+    (6,4) to [short] (9,4) 
+    to [lamp, l={$L_4$}, i={$I_4$}, v={$\Delta V_4$}] (9,0)
+    -- (6,0);
+\end{circuitikz}
+\end{document}
