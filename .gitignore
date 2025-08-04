@@ -15,5 +15,12 @@ wheels/
 # ignore large files
 mpcorb.txt
 mpcorb.csv
+hygdata*
+hr_diagram.png
+sma_zrh*
+sunspot_data.csv
+mass_1.mas_20.txt
+isotopes.csv
 
+# ingore tex output and log files
 circuitikz/aux
