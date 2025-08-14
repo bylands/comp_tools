@@ -23,4 +23,4 @@ mass_1.mas_20.txt
 isotopes.csv
 
 # ingore tex output and log files
-circuitikz/aux
+aux/
