@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{amsmath, siunitx}
+\usepackage[parfill]{parskip}
+
+\sisetup{exponent-product= \cdot} % Multiplication symbol used in exponential form
+\sisetup{separate-uncertainty = true} % write uncertainties as ± ∆a
+
+
+\begin{document}
+\section{Basic example}
+A light bulb is connected to a voltage supply with \qty{12.2}{\V}. 
+The current through the light bulb is \qty{54}{\milli\A}.
+Calculate the power dissipated in the light bulb.
+
+\begin{align}
+    P &= \Delta V \cdot I \\
+    &= \qty{12}{\V} \times \qty{54e-3}{\A} = \qty{0.648}{\W} \approx \qty{0.65}{W}
+\end{align}
+
+\section{Example with uncertainties}
+For a resistor, the voltage and current are measured to be
+ \qty{4.32+-0.01}{\V} and \qty{33.4+-0.2}{\milli\A}, respectively.
+ Calculate the resistance with its uncertainty.
+
+ \begin{align}
+    R &= \frac{\Delta V}{I} \\
+    &= \frac{\qty{4.32}{\V}}{\qty{33.4e-3}{\A}} = \qty{129.34}{\ohm}
+ \end{align}
+
+ \begin{align}
+    \Delta R &= R_\textrm{max} - R \\
+    &= \frac{\qty{4.33}{\V}}{\qty{33.2e-3}{\A}} - \qty{129.34}{\ohm} \\
+    &= \qty{130.42}{\ohm} - \qty{129.34}{\ohm} = \qty{1.1}{\ohm}
+ \end{align}
+
+ \begin{align}
+    R &= \qty{129.3+-1.1}{\ohm}
+ \end{align}
+
+\end{document}
