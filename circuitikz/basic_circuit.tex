@@ -1,14 +1,16 @@
+
+%! TEX TS-program = xelatex
 \documentclass{standalone}
-% \usepackage{mathspec,xltxtra,xunicode}  % Unterstützung für OpenType
+\usepackage{mathspec,xltxtra,xunicode}  % Unterstützung für OpenType
 \usepackage[european resistors, american inductors]{circuitikz}
 \usepackage{siunitx}
 
-% \setmainfont{Minion Pro}[
-% 		Numbers={OldStyle,Proportional}
-% ]
+\setmainfont{Minion Pro}[
+		Numbers={OldStyle,Proportional}
+]
 
-% \setmathsfont(Digits,Latin,Greek)[Numbers={OldStyle,Proportional}]{Minion Pro}
-% \exchangeforms{phi,theta}
+\setmathsfont(Digits,Latin,Greek)[Numbers={OldStyle,Proportional}]{Minion Pro}
+\exchangeforms{phi,theta}
 
 \begin{document}
 \begin{circuitikz}[voltage shift=1, line width=0.5]
