@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pint: Calculations with units</title>
+<title>Pint: Calculations with units – Computational Tools for Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -73,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a14e3238c51140e99ccc48519b6ed9ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7b1b06e26e1e2798ccde3208f86b5bbd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,16 +104,141 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Computational Tools for Physics
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Computational Tools for Physics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">NumPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/arrays.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy Arrays</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/interpolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interpolation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/random.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The NumPy Random Module</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">numpy/vector_matrices.ipynb</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/vectorfields.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector Fields</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/broadcasting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy Broadcasting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">SciPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/constants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical Constants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/curvefit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curve Fit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numerical Integration</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#examples" id="toc-examples" class="nav-link active" data-scroll-target="#examples">Examples</a>
+  <ul class="collapse">
+  <li><a href="#using-pint-together-with-uncertainties" id="toc-using-pint-together-with-uncertainties" class="nav-link" data-scroll-target="#using-pint-together-with-uncertainties">Using Pint together with Uncertainties</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -139,14 +265,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="import-library" class="level4">
 <h4 class="anchored" data-anchor-id="import-library">Import library</h4>
 <div id="fa463509-6126-405a-9767-07c72d38a389" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pint <span class="im">import</span> UnitRegistry</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="define-unitregistry" class="level4">
 <h4 class="anchored" data-anchor-id="define-unitregistry">Define UnitRegistry</h4>
 <p>The unit registry is the main object used to create quantities with units.</p>
 <div id="209697eb-5c0c-4cb6-b112-4929e9a75343" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ureg <span class="op">=</span> UnitRegistry()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="examples" class="level2">
@@ -155,6 +287,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-1-current" class="level4">
 <h4 class="anchored" data-anchor-id="example-1-current">Example 1: Current</h4>
 <div id="ef2c0064-a248-4495-b855-deb0e0ea1113" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> ureg(<span class="st">'75 mA'</span>) <span class="co"># define current in mA</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> ureg(<span class="st">'4.5 h'</span>) <span class="co"># define time interval in h</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -169,11 +303,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Q = </span><span class="sc">{</span>Q<span class="sc">.</span>to(<span class="st">'C'</span>)<span class="sc">:</span><span class="op">~</span>P<span class="fl">.2</span><span class="er">e</span><span class="sc">}</span><span class="ss">'</span>) <span class="co"># print charge in C</span></span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Q = </span><span class="sc">{</span>Q<span class="sc">.</span>to(<span class="st">'C'</span>)<span class="sc">:</span><span class="co">#~P.2f}') # print charge in C using unit prefix</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Q = </span><span class="sc">{</span>Q_C<span class="sc">:</span><span class="op">~</span>P<span class="fl">.2</span><span class="er">e</span><span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>Q_C<span class="sc">.</span>to(<span class="st">'C'</span>)<span class="sc">:</span><span class="fl">.2</span><span class="er">e</span><span class="op">~</span>P<span class="sc">}</span><span class="ss">'</span>) <span class="co"># print charge (calculated with basic units)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="example-2-density" class="level4">
 <h4 class="anchored" data-anchor-id="example-2-density">Example 2: Density</h4>
 <div id="1d873a1d-b297-47ba-9122-3a350e6b4288" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>rho <span class="op">=</span> ureg.Quantity(<span class="fl">7.92</span>, <span class="st">'g/cm**3'</span>) <span class="co"># define density using Quantity</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> ureg.Quantity(<span class="fl">2.5</span>, <span class="st">'dl'</span>) <span class="co"># define volume</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -181,11 +318,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>m<span class="sc">:</span><span class="fl">.2</span><span class="er">f</span><span class="op">~</span>P<span class="sc">}</span><span class="ss">'</span>) <span class="co"># print result with "raw" units</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>m<span class="sc">.</span>to_base_units()<span class="sc">:</span><span class="fl">.2</span><span class="er">f</span><span class="op">~</span>P<span class="sc">}</span><span class="ss">'</span>) <span class="co"># print result in base unit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="example-3-pressure" class="level4">
 <h4 class="anchored" data-anchor-id="example-3-pressure">Example 3: Pressure</h4>
 <div id="4d3f5fd3-1bf2-4d5d-b766-8ae90f1ce001" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="dv">354</span> <span class="op">*</span> ureg(<span class="st">'mbar'</span>) <span class="co"># define pressure in mbar</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="dv">442</span> <span class="op">*</span> ureg(<span class="st">'cm**2'</span>) <span class="co"># define area in cm^2</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -195,6 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>F<span class="sc">.</span>to_base_units()<span class="sc">:</span><span class="op">~</span>P<span class="fl">.3</span><span class="er">g</span><span class="sc">}</span><span class="ss">'</span>) <span class="co"># print result in base units</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>F<span class="sc">.</span>to(<span class="st">'N'</span>)<span class="sc">:</span><span class="op">~</span>P<span class="fl">.3</span><span class="er">g</span><span class="sc">}</span><span class="ss">'</span>) <span class="co"># print result in N</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>F<span class="sc">.</span>to(<span class="st">'N'</span>)<span class="sc">:</span><span class="co">#~P.3g}') # print result in N (with unit prefix)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="using-pint-together-with-uncertainties" class="level3">
@@ -203,6 +344,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-density" class="level4">
 <h4 class="anchored" data-anchor-id="example-density">Example: Density</h4>
 <div id="adf6ac2d-6fca-499f-9d1e-b8f121049341" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define side and mass of a cube, including uncertainties</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> ureg(<span class="st">'1.5 cm'</span>).plus_minus(<span class="fl">0.05</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> ureg(<span class="st">'93.3 g'</span>).plus_minus(<span class="fl">0.1</span>)</span>
@@ -214,6 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># print result with calculated uncertainty</span></span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'density = </span><span class="sc">{</span>rho<span class="sc">.</span>to(<span class="st">'kg/m**3'</span>)<span class="sc">:</span><span class="op">~</span>P<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>rho<span class="sc">.</span>to(<span class="st">'g/cm**3'</span>)<span class="sc">:</span><span class="op">~</span>P<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 
 

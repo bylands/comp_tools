@@ -4,3 +4,32 @@ project:
   render:
   - "*.ipynb"
   - "!exercises/"
+
+website: 
+  title: "Computational Tools for Physics"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+    - section: "NumPy"
+      contents:
+        - "numpy/arrays.ipynb"
+        - "numpy/interpolation.ipynb"
+        - "numpy/random.ipynb"
+        - "numpy/vector_matrices.ipynb"
+        - "numpy/vectorfields.ipynb"
+        - "numpy/broadcasting.ipynb"
+    - section: "SciPy"
+      contents:
+        - "scipy/constants.ipynb"
+        - "scipy/curvefit.ipynb"
+        - "scipy/functions.ipynb"
+        - "scipy/integration.ipynb"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true
+    code-summary: "Click to show/hide code"
+    css: styles.css

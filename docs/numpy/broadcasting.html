@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NumPy Broadcasting</title>
+<title>NumPy Broadcasting – Computational Tools for Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -73,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a14e3238c51140e99ccc48519b6ed9ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7b1b06e26e1e2798ccde3208f86b5bbd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,20 +104,149 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../numpy/arrays.html">NumPy</a></li><li class="breadcrumb-item"><a href="../numpy/broadcasting.html">NumPy Broadcasting</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Computational Tools for Physics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">NumPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/arrays.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy Arrays</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/interpolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interpolation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/random.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The NumPy Random Module</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">numpy/vector_matrices.ipynb</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/vectorfields.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector Fields</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/broadcasting.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">NumPy Broadcasting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">SciPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/constants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical Constants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/curvefit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curve Fit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numerical Integration</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-broadcasting-rule" id="toc-the-broadcasting-rule" class="nav-link active" data-scroll-target="#the-broadcasting-rule">The Broadcasting Rule</a>
+  <ul class="collapse">
+  <li><a href="#example-1-scalar-and-an-array" id="toc-example-1-scalar-and-an-array" class="nav-link" data-scroll-target="#example-1-scalar-and-an-array">Example 1: Scalar and an array</a></li>
+  <li><a href="#example-2-mismatched-dimensions" id="toc-example-2-mismatched-dimensions" class="nav-link" data-scroll-target="#example-2-mismatched-dimensions">Example 2: Mismatched dimensions</a></li>
+  </ul></li>
+  <li><a href="#reshaping-arrays" id="toc-reshaping-arrays" class="nav-link" data-scroll-target="#reshaping-arrays">Reshaping Arrays</a>
+  <ul class="collapse">
+  <li><a href="#example-3-normalizing-data" id="toc-example-3-normalizing-data" class="nav-link" data-scroll-target="#example-3-normalizing-data">Example 3: Normalizing Data</a></li>
+  <li><a href="#example-4-creating-a-distance-matrix" id="toc-example-4-creating-a-distance-matrix" class="nav-link" data-scroll-target="#example-4-creating-a-distance-matrix">Example 4: Creating a Distance Matrix</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../numpy/arrays.html">NumPy</a></li><li class="breadcrumb-item"><a href="../numpy/broadcasting.html">NumPy Broadcasting</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">NumPy Broadcasting</h1>
 </div>
@@ -139,38 +269,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-broadcasting-rule" class="level2">
 <h2 class="anchored" data-anchor-id="the-broadcasting-rule">The Broadcasting Rule</h2>
 <p>In order to broadcast, the size of the trailing axes for both arrays in an operation must either be the same size or one of them must be one.</p>
-<div id="cell-3" class="cell">
+<div id="cell-3" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="example-1-scalar-and-an-array" class="level3">
 <h3 class="anchored" data-anchor-id="example-1-scalar-and-an-array">Example 1: Scalar and an array</h3>
-<div id="cell-5" class="cell">
+<div id="cell-5" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="fl">3.0</span>])</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">2.0</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">*</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>array([2., 4., 6.])</code></pre>
+</div>
 </div>
 </section>
 <section id="example-2-mismatched-dimensions" class="level3">
 <h3 class="anchored" data-anchor-id="example-2-mismatched-dimensions">Example 2: Mismatched dimensions</h3>
-<div id="cell-7" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[ <span class="fl">0.0</span>,  <span class="fl">0.0</span>,  <span class="fl">0.0</span>],</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>               [<span class="fl">10.0</span>, <span class="fl">10.0</span>, <span class="fl">10.0</span>],</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>               [<span class="fl">20.0</span>, <span class="fl">20.0</span>, <span class="fl">20.0</span>],</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>               [<span class="fl">30.0</span>, <span class="fl">30.0</span>, <span class="fl">30.0</span>]])</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="fl">3.0</span>])</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-7" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[ <span class="fl">0.0</span>,  <span class="fl">0.0</span>,  <span class="fl">0.0</span>],</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>               [<span class="fl">10.0</span>, <span class="fl">10.0</span>, <span class="fl">10.0</span>],</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>               [<span class="fl">20.0</span>, <span class="fl">20.0</span>, <span class="fl">20.0</span>],</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>               [<span class="fl">30.0</span>, <span class="fl">30.0</span>, <span class="fl">30.0</span>]])</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="fl">3.0</span>])</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>array([[ 1.,  2.,  3.],
+       [11., 12., 13.],
+       [21., 22., 23.],
+       [31., 32., 33.]])</code></pre>
+</div>
 </div>
 </section>
 </section>
 <section id="reshaping-arrays" class="level2">
 <h2 class="anchored" data-anchor-id="reshaping-arrays">Reshaping Arrays</h2>
 <p>The <code>reshape</code> method allows you to change the shape of an array without changing its data. This is often used to prepare arrays for broadcasting.</p>
-<div id="cell-9" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.arange(<span class="dv">6</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Original array: </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a.reshape((<span class="dv">2</span>, <span class="dv">3</span>))</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Reshaped array:</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="er">{b}')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-9" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.arange(<span class="dv">6</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Original array: </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a.reshape((<span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Reshaped array:</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="er">{b}')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre>  <span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[4]</span><span class="ansi-green-fg">, line 4</span>
+<span class="ansi-red-fg">    </span><span class="ansi-red-fg">print(f'Reshaped array:</span>
+          ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> unterminated f-string literal (detected at line 4)
+</pre>
+</div>
+</div>
 </div>
 <section id="example-3-normalizing-data" class="level3">
 <h3 class="anchored" data-anchor-id="example-3-normalizing-data">Example 3: Normalizing Data</h3>
@@ -178,12 +338,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this example, <code>X</code> is a (5, 3) array representing 5 data points with 3 features each. We calculate the mean (<code>X_mean</code>) and standard deviation (<code>X_std</code>) along <code>axis=0</code>, which gives us the mean and standard deviation for each <em>column</em> (feature). Both <code>X_mean</code> and <code>X_std</code> are 1D arrays of shape (3,).</p>
 <p>When we execute <code>X - X_mean</code>, NumPy sees that the shapes (5, 3) and (3,) are not the same. It then applies the broadcasting rule: it “stretches” <code>X_mean</code> across the rows of <code>X</code>, effectively subtracting the column’s mean from every element in that column. The same process happens for the division with <code>X_std</code>. This allows us to normalize the entire dataset in a single, readable line of code.</p>
 <div id="cell-12" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.rand(<span class="dv">5</span>, <span class="dv">3</span>) <span class="op">*</span> <span class="dv">10</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Original data: </span><span class="sc">{</span>X<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>X_mean <span class="op">=</span> X.mean(axis<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>X_std <span class="op">=</span> X.std(axis<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>X_normalized <span class="op">=</span> (X <span class="op">-</span> X_mean) <span class="op">/</span> X_std</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Normalized data: </span><span class="sc">{</span>X_normalized<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.rand(<span class="dv">5</span>, <span class="dv">3</span>) <span class="op">*</span> <span class="dv">10</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Original data: </span><span class="sc">{</span>X<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>X_mean <span class="op">=</span> X.mean(axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>X_std <span class="op">=</span> X.std(axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>X_normalized <span class="op">=</span> (X <span class="op">-</span> X_mean) <span class="op">/</span> X_std</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Normalized data: </span><span class="sc">{</span>X_normalized<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="example-4-creating-a-distance-matrix" class="level3">
@@ -197,12 +360,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>We then square the differences, sum along the last axis (<code>axis=2</code>) to get the squared Euclidean distance, and finally take the square root to get the final distance matrix.</li>
 </ol>
 <div id="cell-15" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>points <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">1</span>], [<span class="dv">4</span>, <span class="dv">4</span>]])</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the points for broadcasting</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>points_row <span class="op">=</span> points[:, np.newaxis, : ]</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>points_col <span class="op">=</span> points[np.newaxis, :, : ]</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>distances <span class="op">=</span> np.sqrt(np.<span class="bu">sum</span>((points_row <span class="op">-</span> points_col)<span class="op">**</span><span class="dv">2</span>, axis<span class="op">=</span><span class="dv">2</span>))</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Distance matrix: </span><span class="sc">{</span>distances<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>points <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">1</span>], [<span class="dv">4</span>, <span class="dv">4</span>]])</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the points for broadcasting</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>points_row <span class="op">=</span> points[:, np.newaxis, : ]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>points_col <span class="op">=</span> points[np.newaxis, :, : ]</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>distances <span class="op">=</span> np.sqrt(np.<span class="bu">sum</span>((points_row <span class="op">-</span> points_col)<span class="op">**</span><span class="dv">2</span>, axis<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Distance matrix: </span><span class="sc">{</span>distances<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 
 

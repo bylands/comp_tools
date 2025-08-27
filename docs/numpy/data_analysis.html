@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Analysis with NumPy</title>
+<title>Data Analysis with NumPy – Computational Tools for Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -73,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a14e3238c51140e99ccc48519b6ed9ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7b1b06e26e1e2798ccde3208f86b5bbd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -132,16 +133,142 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Computational Tools for Physics
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Computational Tools for Physics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">NumPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/arrays.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy Arrays</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/interpolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interpolation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/random.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The NumPy Random Module</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">numpy/vector_matrices.ipynb</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/vectorfields.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector Fields</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/broadcasting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy Broadcasting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">SciPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/constants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical Constants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/curvefit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curve Fit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numerical Integration</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#example-measuring-density" id="toc-example-measuring-density" class="nav-link active" data-scroll-target="#example-measuring-density">Example: Measuring density</a>
+  <ul class="collapse">
+  <li><a href="#error-calculation" id="toc-error-calculation" class="nav-link" data-scroll-target="#error-calculation">Error calculation</a></li>
+  <li><a href="#calculation-with-pint" id="toc-calculation-with-pint" class="nav-link" data-scroll-target="#calculation-with-pint">Calculation with Pint</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -165,7 +292,10 @@ window.Quarto = {
 
 
 <div id="d43296ab-1375-48ee-a2d4-7fa69f4ab8f0" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="example-measuring-density" class="level2">
 <h2 class="anchored" data-anchor-id="example-measuring-density">Example: Measuring density</h2>
@@ -173,59 +303,82 @@ window.Quarto = {
 <section id="define-arrays-for-measured-data" class="level4">
 <h4 class="anchored" data-anchor-id="define-arrays-for-measured-data">Define arrays for measured data</h4>
 <div id="c3b89083-fe08-4b61-bccc-c37cdd1d8d30" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> np.array([<span class="fl">69.3</span>, <span class="fl">69.1</span>, <span class="fl">69.0</span>, <span class="fl">69.0</span>, <span class="fl">69.2</span>, <span class="fl">69.2</span>]) <span class="co"># mass in g</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="fl">2.05</span>, <span class="fl">2.00</span>, <span class="fl">2.05</span>, <span class="fl">1.95</span>, <span class="fl">2.00</span>, <span class="fl">2.00</span>]) <span class="co"># side in cm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="find-some-characteristic-values" class="level4">
 <h4 class="anchored" data-anchor-id="find-some-characteristic-values">Find some characteristic values</h4>
 <div id="fd570a23-e817-49fb-854c-2cc9aa5d4641" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>m_max <span class="op">=</span> np.<span class="bu">max</span>(m)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>m_min <span class="op">=</span> np.<span class="bu">min</span>(m)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>m_mean <span class="op">=</span> np.mean(m)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'max: </span><span class="sc">{</span>m_max<span class="sc">}</span><span class="ss"> g, min: </span><span class="sc">{</span>m_min<span class="sc">}</span><span class="ss"> g, mean: </span><span class="sc">{</span>m_mean<span class="sc">:.2f}</span><span class="ss"> g'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="calculate-volumes-and-densities" class="level4">
 <h4 class="anchored" data-anchor-id="calculate-volumes-and-densities">Calculate volumes and densities</h4>
 <div id="025036f5-1ff8-47da-91ad-0d662bf5e11f" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> a<span class="op">**</span><span class="dv">3</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>rh <span class="op">=</span> m<span class="op">/</span>V</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'densities: </span><span class="sc">{</span>rh<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="mean-value-and-deviations" class="level4">
 <h4 class="anchored" data-anchor-id="mean-value-and-deviations">Mean value and deviations</h4>
 <div id="22bba13f-7162-4224-82aa-d211854f4b5c" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rh_mean <span class="op">=</span> np.mean(rh)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rh_dev_max <span class="op">=</span> np.<span class="bu">max</span>(rh)<span class="op">-</span>rh_mean</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>rh_dev_min <span class="op">=</span> rh_mean<span class="op">-</span>np.<span class="bu">min</span>(rh)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'mean density: </span><span class="sc">{</span>rh_mean<span class="sc">:.1f}</span><span class="ss"> g/cm^3'</span>)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'deviation max-mean: </span><span class="sc">{</span>rh_dev_max<span class="sc">:.1f}</span><span class="ss"> g/cm^3'</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'deviation min-mean: </span><span class="sc">{</span>rh_dev_min<span class="sc">:.1f}</span><span class="ss"> g/cm^3'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="error-calculation" class="level3">
 <h3 class="anchored" data-anchor-id="error-calculation">Error calculation</h3>
 <p>All students measured the same quantities on the same cube. In this case we make an estimate for the measurement errors for mass and side length based on the deviations between the different students.</p>
 <div id="6d24600c-9a18-490f-9f8b-eed5ddd8ffea" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dm <span class="op">=</span> <span class="fl">0.2</span> <span class="co"># error for mass in g</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>da <span class="op">=</span> <span class="fl">0.05</span> <span class="co"># error for side in cm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>The error for the density can be found using the “worst case method”.</p>
 <div id="12a328c5-1c16-41f8-9a81-69414836c6c5" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rh <span class="op">=</span> m_mean<span class="op">/</span>np.mean(a)<span class="op">**</span><span class="dv">3</span> <span class="co"># mean density (based on mean mass and mean side)</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>rh_max <span class="op">=</span> (m_mean<span class="op">+</span>dm)<span class="op">/</span>(np.mean(a)<span class="op">-</span>da)<span class="op">**</span><span class="dv">3</span> <span class="co"># max density (based on max mass and min side)</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>drh <span class="op">=</span> rh_max <span class="op">-</span> rh <span class="co"># error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div id="8ed2ab1d-3358-43a3-b613-81f3aa71a1af" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'density: (</span><span class="sc">{</span>rh<span class="sc">:.1f}</span><span class="ss"> ± </span><span class="sc">{</span>drh<span class="sc">:.1f}</span><span class="ss">) g/cm^3'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="calculation-with-pint" class="level3">
 <h3 class="anchored" data-anchor-id="calculation-with-pint">Calculation with Pint</h3>
 <p>Alternatively, we can use the built-in functionality of Pint to calculate the values, including their errors.</p>
 <div id="5fcf2c49" class="cell">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pint <span class="im">import</span> UnitRegistry</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> uncertainties <span class="im">import</span> unumpy</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -244,6 +397,7 @@ window.Quarto = {
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>rh_p <span class="op">=</span> m<span class="op">/</span>V_p <span class="co"># calculate density</span></span>
 <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'density: </span><span class="sc">{</span>rh_p<span class="sc">.</span>mean()<span class="sc">:</span><span class="op">~</span>P<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="remark" class="level4">
 <h4 class="anchored" data-anchor-id="remark">Remark</h4>

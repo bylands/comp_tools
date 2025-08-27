@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Physical Constants</title>
+<title>Physical Constants – Computational Tools for Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -73,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a14e3238c51140e99ccc48519b6ed9ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7b1b06e26e1e2798ccde3208f86b5bbd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,20 +104,140 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../scipy/constants.html">SciPy</a></li><li class="breadcrumb-item"><a href="../scipy/constants.html">Physical Constants</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Computational Tools for Physics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">NumPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/arrays.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy Arrays</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/interpolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interpolation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/random.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The NumPy Random Module</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">numpy/vector_matrices.ipynb</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/vectorfields.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector Fields</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/broadcasting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy Broadcasting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">SciPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/constants.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Physical Constants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/curvefit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curve Fit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numerical Integration</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#import-constants" id="toc-import-constants" class="nav-link active" data-scroll-target="#import-constants">Import constants</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../scipy/constants.html">SciPy</a></li><li class="breadcrumb-item"><a href="../scipy/constants.html">Physical Constants</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Physical Constants</h1>
 </div>
@@ -138,45 +259,258 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The Python library <em>SciPy</em> (https://scipy.org/) contains a collection of important physical constants and units.</p>
 <section id="import-constants" class="level3">
 <h3 class="anchored" data-anchor-id="import-constants">Import constants</h3>
-<div id="1352184e-7357-442d-b648-9de0c89b35bf" class="cell">
+<div id="1352184e-7357-442d-b648-9de0c89b35bf" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> constants</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="show-list-of-constants" class="level4">
 <h4 class="anchored" data-anchor-id="show-list-of-constants">Show list of constants</h4>
 <p>A list of the constants and units in scipy.constants can be found on https://docs.scipy.org/doc/scipy/reference/constants.html.</p>
-<div id="b3289969-6562-4e81-8481-7514db34d607" class="cell">
+<div id="b3289969-6562-4e81-8481-7514db34d607" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> <span class="bu">dir</span>(constants):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Avogadro
+Boltzmann
+Btu
+Btu_IT
+Btu_th
+ConstantWarning
+G
+Julian_year
+N_A
+Planck
+R
+Rydberg
+Stefan_Boltzmann
+Wien
+__all__
+__builtins__
+__cached__
+__doc__
+__file__
+__loader__
+__name__
+__package__
+__path__
+__spec__
+_codata
+_constants
+_obsolete_constants
+acre
+alpha
+angstrom
+arcmin
+arcminute
+arcsec
+arcsecond
+astronomical_unit
+atm
+atmosphere
+atomic_mass
+atto
+au
+bar
+barrel
+bbl
+blob
+c
+calorie
+calorie_IT
+calorie_th
+carat
+centi
+codata
+constants
+convert_temperature
+day
+deci
+degree
+degree_Fahrenheit
+deka
+dyn
+dyne
+e
+eV
+electron_mass
+electron_volt
+elementary_charge
+epsilon_0
+erg
+exa
+exbi
+femto
+fermi
+find
+fine_structure
+fluid_ounce
+fluid_ounce_US
+fluid_ounce_imp
+foot
+g
+gallon
+gallon_US
+gallon_imp
+gas_constant
+gibi
+giga
+golden
+golden_ratio
+grain
+gram
+gravitational_constant
+h
+hbar
+hectare
+hecto
+horsepower
+hour
+hp
+inch
+k
+kgf
+kibi
+kilo
+kilogram_force
+kmh
+knot
+lambda2nu
+lb
+lbf
+light_year
+liter
+litre
+long_ton
+m_e
+m_n
+m_p
+m_u
+mach
+mebi
+mega
+metric_ton
+micro
+micron
+mil
+mile
+milli
+minute
+mmHg
+mph
+mu_0
+nano
+nautical_mile
+neutron_mass
+nu2lambda
+ounce
+oz
+parsec
+pebi
+peta
+physical_constants
+pi
+pico
+point
+pound
+pound_force
+precision
+proton_mass
+psi
+pt
+quecto
+quetta
+ronna
+ronto
+short_ton
+sigma
+slinch
+slug
+speed_of_light
+speed_of_sound
+stone
+survey_foot
+survey_mile
+tebi
+tera
+test
+ton_TNT
+torr
+troy_ounce
+troy_pound
+u
+unit
+value
+week
+yard
+year
+yobi
+yocto
+yotta
+zebi
+zepto
+zero_Celsius
+zetta</code></pre>
+</div>
 </div>
 </section>
 <section id="using-constants" class="level4">
 <h4 class="anchored" data-anchor-id="using-constants">Using constants</h4>
-<div id="7d0bcfbe-814f-4b05-969d-2d404e558124" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'elementary charge: e = </span><span class="sc">{</span>constants<span class="sc">.</span>elementary_charge<span class="sc">}</span><span class="ss"> C'</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'electron mass: me = </span><span class="sc">{</span>constants<span class="sc">.</span>electron_mass<span class="sc">}</span><span class="ss"> kg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="7d0bcfbe-814f-4b05-969d-2d404e558124" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'elementary charge: e = </span><span class="sc">{</span>constants<span class="sc">.</span>elementary_charge<span class="sc">}</span><span class="ss"> C'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'electron mass: me = </span><span class="sc">{</span>constants<span class="sc">.</span>electron_mass<span class="sc">}</span><span class="ss"> kg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>elementary charge: e = 1.602176634e-19 C
+electron mass: me = 9.1093837139e-31 kg</code></pre>
 </div>
-<div id="6a54565c-0a73-4c59-b8c8-30961586d0c8" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># convert proton mass to MeV</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mp <span class="op">=</span> constants.m_p <span class="co"># proton mass in kg</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> constants.speed_of_light <span class="co"># speed of light</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>MeV <span class="op">=</span> <span class="fl">1e6</span> <span class="op">*</span> constants.electron_volt <span class="co"># conversion factor J -&gt; MeV</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>mp_MeV <span class="op">=</span> mp <span class="op">*</span> c<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> MeV <span class="co"># convert from kg to MeV/c^2</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'proton mass: mp = </span><span class="sc">{</span>mp_MeV<span class="sc">}</span><span class="ss"> MeV/c^2'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="6a54565c-0a73-4c59-b8c8-30961586d0c8" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># convert proton mass to MeV</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>mp <span class="op">=</span> constants.m_p <span class="co"># proton mass in kg</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> constants.speed_of_light <span class="co"># speed of light</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>MeV <span class="op">=</span> <span class="fl">1e6</span> <span class="op">*</span> constants.electron_volt <span class="co"># conversion factor J -&gt; MeV</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>mp_MeV <span class="op">=</span> mp <span class="op">*</span> c<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> MeV <span class="co"># convert from kg to MeV/c^2</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'proton mass: mp = </span><span class="sc">{</span>mp_MeV<span class="sc">}</span><span class="ss"> MeV/c^2'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>proton mass: mp = 938.2720894282575 MeV/c^2</code></pre>
+</div>
 </div>
 </section>
 <section id="additional-constants" class="level4">
 <h4 class="anchored" data-anchor-id="additional-constants">Additional Constants</h4>
 <p>The dictionary <em>physical_constants</em> contains the recommended values (including uncertainties) of a large number of physical constants, as listed in the CODATA database. The return value is a dictionary containing the value, unit, and uncertainty.</p>
-<div id="6ac03b72-f612-4af4-ab6e-9244bdfdf7bd" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>m_al, unit, uncertainty <span class="op">=</span> constants.physical_constants[<span class="st">'alpha particle mass'</span>]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'mass of alpha particle: </span><span class="sc">{</span>m_al<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>unit<span class="sc">}</span><span class="ss"> (± </span><span class="sc">{</span>uncertainty<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>unit<span class="sc">}</span><span class="ss">)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6ac03b72-f612-4af4-ab6e-9244bdfdf7bd" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>m_al, unit, uncertainty <span class="op">=</span> constants.physical_constants[<span class="st">'alpha particle mass'</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'mass of alpha particle: </span><span class="sc">{</span>m_al<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>unit<span class="sc">}</span><span class="ss"> (± </span><span class="sc">{</span>uncertainty<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>unit<span class="sc">}</span><span class="ss">)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>mass of alpha particle: 6.644657345e-27 kg (± 2.1e-36 kg)</code></pre>
 </div>
-<div id="9bf76cec-0b7d-4a92-b537-3a5c3a960c9a" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The speed of light is an exact value in the SI system, so it has no uncertainty.</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>c, unit, uncertainty <span class="op">=</span> constants.physical_constants[<span class="st">'speed of light in vacuum'</span>]</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'speed of light: </span><span class="sc">{</span>c<span class="sc">:.0f}</span><span class="ss"> </span><span class="sc">{</span>unit<span class="sc">}</span><span class="ss"> (± </span><span class="sc">{</span>uncertainty<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>unit<span class="sc">}</span><span class="ss">)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="9bf76cec-0b7d-4a92-b537-3a5c3a960c9a" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The speed of light is an exact value in the SI system, so it has no uncertainty.</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>c, unit, uncertainty <span class="op">=</span> constants.physical_constants[<span class="st">'speed of light in vacuum'</span>]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'speed of light: </span><span class="sc">{</span>c<span class="sc">:.0f}</span><span class="ss"> </span><span class="sc">{</span>unit<span class="sc">}</span><span class="ss"> (± </span><span class="sc">{</span>uncertainty<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>unit<span class="sc">}</span><span class="ss">)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>speed of light: 299792458 m s^-1 (± 0.0 m s^-1)</code></pre>
+</div>
 </div>
 
 

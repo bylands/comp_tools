@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Interpolation</title>
+<title>Interpolation – Computational Tools for Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -73,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a14e3238c51140e99ccc48519b6ed9ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7b1b06e26e1e2798ccde3208f86b5bbd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,20 +104,141 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../numpy/arrays.html">NumPy</a></li><li class="breadcrumb-item"><a href="../numpy/interpolation.html">Interpolation</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Computational Tools for Physics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">NumPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/arrays.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy Arrays</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/interpolation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Interpolation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/random.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The NumPy Random Module</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">numpy/vector_matrices.ipynb</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/vectorfields.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector Fields</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/broadcasting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy Broadcasting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">SciPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/constants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical Constants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/curvefit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curve Fit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numerical Integration</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#interpolating-values" id="toc-interpolating-values" class="nav-link active" data-scroll-target="#interpolating-values">Interpolating values</a></li>
+  <li><a href="#example-density-of-water" id="toc-example-density-of-water" class="nav-link" data-scroll-target="#example-density-of-water">Example: Density of water</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../numpy/arrays.html">NumPy</a></li><li class="breadcrumb-item"><a href="../numpy/interpolation.html">Interpolation</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Interpolation</h1>
 </div>
@@ -136,19 +258,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Physical properties may depend on other parameters like pressure or ambient temperature. While some values can be read from tables (e.g.&nbsp;density of water at different temperatures), if a specific parameter value is required, we often have to interpolate between two tabulated values. NumPy offers a simple method for linear interpolation.</p>
-<div id="cell-2" class="cell">
+<div id="cell-2" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="interpolating-values" class="level3">
 <h3 class="anchored" data-anchor-id="interpolating-values">Interpolating values</h3>
 <p>For numpy.interp() to work correctly, the x values have to be monotonically increasing.</p>
-<div id="cell-4" class="cell">
+<div id="cell-4" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]) <span class="co"># array of x values (monotonically increasing)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">3</span>]) <span class="co"># array of y values</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>test_values <span class="op">=</span> [<span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="fl">3.2</span>, <span class="fl">5.5</span>] <span class="co"># x values to use for interpolation</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>np.interp(test_values, x, y) <span class="co"># return interpolated values at positions 'test_values'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>array([2. , 3.5, 5.8, 3. ])</code></pre>
+</div>
 </div>
 <p>As can be seen above, if an x value is less/greater than the minimum/maximum value of the given data, the return value corresponds to the first/last y value.</p>
 </section>
@@ -157,68 +288,105 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The table on page 192 in <em>Formulae, Tables, Concepts</em> lists the density of water at various temperatures. What are the answers to the following questions? - What is the density of water at 125°C? - At what temperature is the density of water 900 kg/m^3? - At what temperature is the density of water 999.5 kg/m^3?</p>
 <section id="data-from-table" class="level4">
 <h4 class="anchored" data-anchor-id="data-from-table">Data from table</h4>
-<div id="cell-8" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> np.array([<span class="op">-</span><span class="dv">10</span>, <span class="op">-</span><span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>,</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                        <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                        <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>, <span class="dv">300</span>, <span class="dv">350</span>])</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>density <span class="op">=</span> np.array([<span class="fl">998.109</span>, <span class="fl">999.255</span>, <span class="fl">999.840</span>, <span class="fl">999.964</span>, <span class="fl">999.972</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                    <span class="fl">999.964</span>, <span class="fl">999.700</span>, <span class="fl">999.101</span>, <span class="fl">998.206</span>, <span class="fl">997.047</span>, </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                    <span class="fl">995.650</span>, <span class="fl">992.22</span>, <span class="fl">988.04</span>, <span class="fl">983.20</span>, <span class="fl">977.76</span>, </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fl">971.79</span>, <span class="fl">965.30</span>, <span class="fl">958.35</span>, <span class="fl">916.8</span>, <span class="fl">864.7</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                    <span class="fl">799.2</span>, <span class="fl">712.2</span>, <span class="fl">574.3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-8" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> np.array([<span class="op">-</span><span class="dv">10</span>, <span class="op">-</span><span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                        <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                        <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>, <span class="dv">300</span>, <span class="dv">350</span>])</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>density <span class="op">=</span> np.array([<span class="fl">998.109</span>, <span class="fl">999.255</span>, <span class="fl">999.840</span>, <span class="fl">999.964</span>, <span class="fl">999.972</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                    <span class="fl">999.964</span>, <span class="fl">999.700</span>, <span class="fl">999.101</span>, <span class="fl">998.206</span>, <span class="fl">997.047</span>, </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                    <span class="fl">995.650</span>, <span class="fl">992.22</span>, <span class="fl">988.04</span>, <span class="fl">983.20</span>, <span class="fl">977.76</span>, </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fl">971.79</span>, <span class="fl">965.30</span>, <span class="fl">958.35</span>, <span class="fl">916.8</span>, <span class="fl">864.7</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                    <span class="fl">799.2</span>, <span class="fl">712.2</span>, <span class="fl">574.3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="density-at-125c" class="level4">
 <h4 class="anchored" data-anchor-id="density-at-125c">Density at 125°C</h4>
-<div id="cell-10" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>test_temp <span class="op">=</span> <span class="dv">125</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>test_dens <span class="op">=</span> np.interp(test_temp, temperature, density)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'density at </span><span class="sc">{</span>test_temp<span class="sc">}</span><span class="ss"> °C: </span><span class="sc">{</span>test_dens<span class="sc">:.1f}</span><span class="ss"> kg/m^3'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-10" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>test_temp <span class="op">=</span> <span class="dv">125</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>test_dens <span class="op">=</span> np.interp(test_temp, temperature, density)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'density at </span><span class="sc">{</span>test_temp<span class="sc">}</span><span class="ss"> °C: </span><span class="sc">{</span>test_dens<span class="sc">:.1f}</span><span class="ss"> kg/m^3'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>density at 125 °C: 937.6 kg/m^3</code></pre>
+</div>
 </div>
 </section>
 <section id="temperature-for-density-900-kgm3" class="level4">
 <h4 class="anchored" data-anchor-id="temperature-for-density-900-kgm3">Temperature for density 900 kg/m^3</h4>
 <p>Before we can use interp(), we have to sort both the temperature and the density array such that the densities are monotonically increasing.</p>
-<div id="cell-12" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ordered <span class="op">=</span> np.argsort(density)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sorted_dens <span class="op">=</span> density[ordered]</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>sorted_temp <span class="op">=</span> temperature[ordered]</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>test_dens <span class="op">=</span> <span class="dv">900</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>test_temp <span class="op">=</span> np.interp(test_dens, sorted_dens, sorted_temp)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'temperature for </span><span class="sc">{</span>test_dens<span class="sc">}</span><span class="ss"> kg/m^3: </span><span class="sc">{</span>test_temp<span class="sc">:.1f}</span><span class="ss"> °C'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-12" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ordered <span class="op">=</span> np.argsort(density)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>sorted_dens <span class="op">=</span> density[ordered]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>sorted_temp <span class="op">=</span> temperature[ordered]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>test_dens <span class="op">=</span> <span class="dv">900</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>test_temp <span class="op">=</span> np.interp(test_dens, sorted_dens, sorted_temp)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'temperature for </span><span class="sc">{</span>test_dens<span class="sc">}</span><span class="ss"> kg/m^3: </span><span class="sc">{</span>test_temp<span class="sc">:.1f}</span><span class="ss"> °C'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>temperature for 900 kg/m^3: 166.1 °C</code></pre>
+</div>
 </div>
 </section>
 <section id="temperature-for-density-999.5-kgm3" class="level4">
 <h4 class="anchored" data-anchor-id="temperature-for-density-999.5-kgm3">Temperature for density 999.5 kg/m^3</h4>
 <p>Because of the anomaly of water, there is no one-to-one correspondence between temperature and density around 4 °C. We have to pick the relevant part of the table before the interpolation.</p>
-<div id="cell-14" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>test_dens <span class="op">=</span> <span class="fl">999.5</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>test_temp1 <span class="op">=</span> np.interp(test_dens, density[:<span class="dv">5</span>], temperature[:<span class="dv">5</span>]) <span class="co"># only use values up to 4°C</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'temperature for </span><span class="sc">{</span>test_dens<span class="sc">}</span><span class="ss"> kg/m^3: </span><span class="sc">{</span>test_temp1<span class="sc">:.1f}</span><span class="ss"> °C'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-14" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>test_dens <span class="op">=</span> <span class="fl">999.5</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>test_temp1 <span class="op">=</span> np.interp(test_dens, density[:<span class="dv">5</span>], temperature[:<span class="dv">5</span>]) <span class="co"># only use values up to 4°C</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'temperature for </span><span class="sc">{</span>test_dens<span class="sc">}</span><span class="ss"> kg/m^3: </span><span class="sc">{</span>test_temp1<span class="sc">:.1f}</span><span class="ss"> °C'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>temperature for 999.5 kg/m^3: -2.9 °C</code></pre>
 </div>
-<div id="cell-15" class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For the second solution, we need to consider temperatures above 4 °C. </span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The order of the density values has to be reversed.</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>test_temp2 <span class="op">=</span> np.interp(test_dens, density[<span class="op">-</span><span class="dv">1</span>:<span class="dv">3</span>:<span class="op">-</span><span class="dv">1</span>], temperature[<span class="op">-</span><span class="dv">1</span>:<span class="dv">3</span>:<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'temperature for </span><span class="sc">{</span>test_dens<span class="sc">}</span><span class="ss"> kg/m^3: </span><span class="sc">{</span>test_temp2<span class="sc">:.1f}</span><span class="ss"> °C'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-15" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For the second solution, we need to consider temperatures above 4 °C. </span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The order of the density values has to be reversed.</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>test_temp2 <span class="op">=</span> np.interp(test_dens, density[<span class="op">-</span><span class="dv">1</span>:<span class="dv">3</span>:<span class="op">-</span><span class="dv">1</span>], temperature[<span class="op">-</span><span class="dv">1</span>:<span class="dv">3</span>:<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'temperature for </span><span class="sc">{</span>test_dens<span class="sc">}</span><span class="ss"> kg/m^3: </span><span class="sc">{</span>test_temp2<span class="sc">:.1f}</span><span class="ss"> °C'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>temperature for 999.5 kg/m^3: 11.7 °C</code></pre>
+</div>
 </div>
 </section>
 <section id="visualisation" class="level4">
 <h4 class="anchored" data-anchor-id="visualisation">Visualisation</h4>
-<div id="cell-17" class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.plot(temperature[:<span class="dv">9</span>], density[:<span class="dv">9</span>], label<span class="op">=</span><span class="st">'density of water'</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Temperature (°C)'</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Density '</span> <span class="op">+</span> <span class="vs">r'</span><span class="kw">(</span><span class="vs">kg/m</span><span class="dv">$^</span><span class="vs">3</span><span class="dv">$</span><span class="kw">)</span><span class="vs">'</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>plt.hlines(test_dens, <span class="op">-</span><span class="dv">10</span>, <span class="dv">20</span>, <span class="st">'red'</span>, label<span class="op">=</span><span class="vs">r'</span><span class="dv">$</span><span class="vs">p</span><span class="dv">$</span><span class="vs"> = '</span> <span class="op">+</span> <span class="ss">f'</span><span class="sc">{</span>test_dens<span class="sc">}</span><span class="ss"> '</span> <span class="op">+</span> <span class="vs">r'kg/m</span><span class="dv">$^</span><span class="vs">3</span><span class="dv">$</span><span class="vs">'</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>plt.plot([test_temp1, test_temp2], [test_dens, test_dens], <span class="st">'og'</span>)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-17" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plt.plot(temperature[:<span class="dv">9</span>], density[:<span class="dv">9</span>], label<span class="op">=</span><span class="st">'density of water'</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Temperature (°C)'</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Density '</span> <span class="op">+</span> <span class="vs">r'</span><span class="kw">(</span><span class="vs">kg/m</span><span class="dv">$^</span><span class="vs">3</span><span class="dv">$</span><span class="kw">)</span><span class="vs">'</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>plt.hlines(test_dens, <span class="op">-</span><span class="dv">10</span>, <span class="dv">20</span>, <span class="st">'red'</span>, label<span class="op">=</span><span class="vs">r'</span><span class="dv">$</span><span class="vs">p</span><span class="dv">$</span><span class="vs"> = '</span> <span class="op">+</span> <span class="ss">f'</span><span class="sc">{</span>test_dens<span class="sc">}</span><span class="ss"> '</span> <span class="op">+</span> <span class="vs">r'kg/m</span><span class="dv">$^</span><span class="vs">3</span><span class="dv">$</span><span class="vs">'</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>plt.plot([test_temp1, test_temp2], [test_dens, test_dens], <span class="st">'og'</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="interpolation_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 
 

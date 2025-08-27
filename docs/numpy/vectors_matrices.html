@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Vectors and Matrices in NumPy</title>
+<title>Vectors and Matrices in NumPy – Computational Tools for Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -73,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a14e3238c51140e99ccc48519b6ed9ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7b1b06e26e1e2798ccde3208f86b5bbd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -132,16 +133,132 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Computational Tools for Physics
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Computational Tools for Physics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">NumPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/arrays.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy Arrays</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/interpolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interpolation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/random.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The NumPy Random Module</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">numpy/vector_matrices.ipynb</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/vectorfields.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vector Fields</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/broadcasting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NumPy Broadcasting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">SciPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/constants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical Constants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/curvefit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curve Fit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scipy/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numerical Integration</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -167,7 +284,9 @@ window.Quarto = {
 <section id="vectors" class="level4">
 <h4 class="anchored" data-anchor-id="vectors">Vectors</h4>
 <p>Vectors can be implemented as arrays with 2 (2D vectors) or 3 (3D vectors) elements. Typical vector operations can easily be calculated.</p>
-<div id="a635feca-591a-4a77-97f1-648c80b45e26" class="cell">
+<div id="a635feca-591a-4a77-97f1-648c80b45e26" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>u <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>]) <span class="co"># vector u</span></span>
@@ -178,80 +297,183 @@ window.Quarto = {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'scalar multiplication: 3 u = </span><span class="sc">{</span><span class="dv">3</span><span class="op">*</span>u<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'dot product: u · v = </span><span class="sc">{</span>np<span class="sc">.</span>dot(u, v)<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'cross product: u x v = </span><span class="sc">{</span>np<span class="sc">.</span>cross(u, v)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>sum: u + v = [4 5 6]
+difference: u - v = [-2  1 -2]
+scalar multiplication: 3 u = [3 9 6]
+dot product: u · v = 17
+cross product: u x v = [ 8  2 -7]</code></pre>
+</div>
 </div>
 <p>A two-dimensional array (array of vectors) can be used to perform calculations on several vectors at once.</p>
-<div id="c30592d1-8f9f-43b5-b1df-b57cf36ef0a2" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>v_list <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>]])</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'sum of vectors: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(v_list, axis<span class="op">=</span><span class="dv">0</span>)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c30592d1-8f9f-43b5-b1df-b57cf36ef0a2" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>v_list <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>]])</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'sum of vectors: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(v_list, axis<span class="op">=</span><span class="dv">0</span>)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>sum of vectors: [2 4 7]</code></pre>
+</div>
 </div>
 <p>The keyword argument <em>axis</em> defines the level within the array that is used for the summation. With <em>axis=1</em> the summation acts on each of the four vectors:</p>
-<div id="bdc9e85e-19a2-4557-bf49-5dc3d721c1bd" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'sum of components within each vector: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(v_list, axis<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="bdc9e85e-19a2-4557-bf49-5dc3d721c1bd" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'sum of components within each vector: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(v_list, axis<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>sum of components within each vector: [1 3 4 5]</code></pre>
+</div>
 </div>
 <p>If <em>axis</em> is not defined, the values are added independently of their level.</p>
-<div id="c3108a39-6d9d-4765-b794-d208be503353" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'sum of all components: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(v_list)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c3108a39-6d9d-4765-b794-d208be503353" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'sum of all components: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(v_list)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>sum of all components: 13</code></pre>
+</div>
 </div>
 </section>
 <section id="matrices" class="level4">
 <h4 class="anchored" data-anchor-id="matrices">Matrices</h4>
 <p>A two-dimensional array (i.e.&nbsp;a nested array) can also be interpreted as a matrix.</p>
-<div id="8b36e9ec-eadd-464a-96f0-12e8884c493e" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">9</span>], [<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">3</span>], [<span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">3</span>]])</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>], [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>]])</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8b36e9ec-eadd-464a-96f0-12e8884c493e" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">9</span>], [<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">3</span>], [<span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">3</span>]])</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>], [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>]])</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[0 1 9]
+ [2 0 3]
+ [6 2 3]]
+
+[[0 1 3]
+ [1 0 1]
+ [3 2 1]]</code></pre>
+</div>
 </div>
 <p>Elements of the matrix can easily be accessed. Bear in mind that indices are zero-based.</p>
-<div id="d553ee65-c027-45dc-be27-f56257fe672f" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Element A(1, 2): </span><span class="sc">{</span>A[<span class="dv">0</span>, <span class="dv">1</span>]<span class="sc">}</span><span class="ss">'</span>) <span class="co"># element in first row, second column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d553ee65-c027-45dc-be27-f56257fe672f" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Element A(1, 2): </span><span class="sc">{</span>A[<span class="dv">0</span>, <span class="dv">1</span>]<span class="sc">}</span><span class="ss">'</span>) <span class="co"># element in first row, second column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Element A(1, 2): 1</code></pre>
 </div>
-<div id="cccaee65-c1c2-43dd-a5e2-6e07f4f8228a" class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'second row: </span><span class="sc">{</span>A[<span class="dv">1</span>, :]<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="81eb09e3-15d2-4daa-b18a-6d36bdd44eb5" class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'third column: </span><span class="sc">{</span>A[:, <span class="dv">2</span>]<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cccaee65-c1c2-43dd-a5e2-6e07f4f8228a" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'second row: </span><span class="sc">{</span>A[<span class="dv">1</span>, :]<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>second row: [2 0 3]</code></pre>
+</div>
+</div>
+<div id="81eb09e3-15d2-4daa-b18a-6d36bdd44eb5" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'third column: </span><span class="sc">{</span>A[:, <span class="dv">2</span>]<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>third column: [9 3 3]</code></pre>
+</div>
 </div>
 </section>
 <section id="matrix-multiplication" class="level4">
 <h4 class="anchored" data-anchor-id="matrix-multiplication">Matrix multiplication</h4>
 <p>The symbol @ is used for matrix multiplication:</p>
-<div id="916244fc-f148-4d1e-83fb-4dfa18db957d" class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A <span class="op">@</span> B) <span class="co"># product of A and B</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A <span class="op">@</span> u) <span class="co"># A applied to vector u</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="916244fc-f148-4d1e-83fb-4dfa18db957d" class="cell" data-execution_count="9">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A <span class="op">@</span> B) <span class="co"># product of A and B</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A <span class="op">@</span> u) <span class="co"># A applied to vector u</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[28 18 10]
+ [ 9  8  9]
+ [11 12 23]]
+
+[21  8 18]</code></pre>
+</div>
 </div>
 <p>The sub-library numpy.linalg contains additional methods to work with matrices.</p>
-<div id="d9d91656-d952-41bf-8876-7ba797ed886a" class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.linalg <span class="im">import</span> inv, eig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d9d91656-d952-41bf-8876-7ba797ed886a" class="cell" data-execution_count="10">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.linalg <span class="im">import</span> inv, eig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="inverted-matrix" class="level4">
 <h4 class="anchored" data-anchor-id="inverted-matrix">Inverted matrix</h4>
-<div id="2cc8be1f-e3e0-43e2-b70d-a5db630945b4" class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(inv(A)) <span class="co"># inverse of matrix A</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A <span class="op">@</span> inv(A)) <span class="co"># should be identity matrix; deviations are due to numerical errors</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">round</span>(A <span class="op">@</span> inv(A), decimals<span class="op">=</span><span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="2cc8be1f-e3e0-43e2-b70d-a5db630945b4" class="cell" data-execution_count="11">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(inv(A)) <span class="co"># inverse of matrix A</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A <span class="op">@</span> inv(A)) <span class="co"># should be identity matrix; deviations are due to numerical errors</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">round</span>(A <span class="op">@</span> inv(A), decimals<span class="op">=</span><span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[-0.125       0.3125      0.0625    ]
+ [ 0.25       -1.125       0.375     ]
+ [ 0.08333333  0.125      -0.04166667]]
+
+[[ 1.00000000e+00  0.00000000e+00  2.08166817e-17]
+ [-1.38777878e-17  1.00000000e+00  6.93889390e-18]
+ [ 0.00000000e+00  0.00000000e+00  1.00000000e+00]]
+
+[[ 1.  0.  0.]
+ [-0.  1.  0.]
+ [ 0.  0.  1.]]</code></pre>
+</div>
 </div>
 </section>
 <section id="eigenvalues-and-eigenvectors" class="level4">
 <h4 class="anchored" data-anchor-id="eigenvalues-and-eigenvectors">Eigenvalues and eigenvectors</h4>
-<div id="a5cb9432-897c-461e-91ca-d624ab17e596" class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>values, matrix <span class="op">=</span> eig(A)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(values) <span class="co"># eigenvalues of A</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix) <span class="co"># eigenvectors of A as a matrix, columns are eigenvectors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a5cb9432-897c-461e-91ca-d624ab17e596" class="cell" data-execution_count="12">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>values, matrix <span class="op">=</span> eig(A)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(values) <span class="co"># eigenvalues of A</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix) <span class="co"># eigenvectors of A as a matrix, columns are eigenvectors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[ 9.81507291 -6.         -0.81507291]
+
+[[-6.54194593e-01 -8.32050294e-01  2.67585631e-01]
+ [-3.39827915e-01 -6.83846344e-18 -9.60001397e-01]
+ [-6.75682190e-01  5.54700196e-01  8.24332888e-02]]</code></pre>
 </div>
-<div id="8ebc579a-15fa-4f5d-9d78-a85d06422a74" class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>vectors <span class="op">=</span> matrix.T <span class="co"># eigenvectors correspond to rows of transposed matrix</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">3</span>):</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(np.<span class="bu">round</span>(A <span class="op">@</span> vectors[i] <span class="op">-</span> values[i] <span class="op">*</span> vectors[i], decimals<span class="op">=</span><span class="dv">5</span>)) <span class="co"># verify if A v = \lambda v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="8ebc579a-15fa-4f5d-9d78-a85d06422a74" class="cell" data-execution_count="13">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>vectors <span class="op">=</span> matrix.T <span class="co"># eigenvectors correspond to rows of transposed matrix</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">3</span>):</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(np.<span class="bu">round</span>(A <span class="op">@</span> vectors[i] <span class="op">-</span> values[i] <span class="op">*</span> vectors[i], decimals<span class="op">=</span><span class="dv">5</span>)) <span class="co"># verify if A v = \lambda v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[-0. -0. -0.]
+[ 0. -0. -0.]
+[ 0. -0.  0.]</code></pre>
+</div>
 </div>
 </section>
 <section id="example-solve-system-of-linear-equations" class="level4">
@@ -264,13 +486,19 @@ window.Quarto = {
 <p><span class="math inline">\(M \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \vec{b}\)</span></p>
 <p>with <span class="math inline">\(M = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 1 &amp; -1 \\ 2 &amp; -1 &amp; 1 \end{pmatrix} \quad\)</span> and <span class="math inline">\(\quad \vec{b} = \begin{pmatrix} 13 \\ -2 \\ 6 \end{pmatrix}\)</span></p>
 <p>The solution is then <span class="math inline">\(\begin{pmatrix} x \\ y \\ z \end{pmatrix} = M^{-1}\, \vec{b}\)</span></p>
-<div id="3a077041-f4d4-46ab-b876-36c93f4e0698" class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>], [<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>]])</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">13</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">6</span>])</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>x, y, z <span class="op">=</span> inv(M) <span class="op">@</span> b</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'The solution is </span><span class="sc">{</span>x<span class="op">=</span><span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>y<span class="op">=</span><span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>z<span class="op">=</span><span class="sc">:.1f}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="3a077041-f4d4-46ab-b876-36c93f4e0698" class="cell" data-execution_count="14">
+<details class="code-fold">
+<summary>Click to show/hide code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>], [<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>]])</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">13</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">6</span>])</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>x, y, z <span class="op">=</span> inv(M) <span class="op">@</span> b</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'The solution is </span><span class="sc">{</span>x<span class="op">=</span><span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>y<span class="op">=</span><span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>z<span class="op">=</span><span class="sc">:.1f}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>The solution is x=2.0, y=1.0, z=3.0</code></pre>
+</div>
 </div>
 
 
