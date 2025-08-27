@@ -24,3 +24,5 @@ isotopes.csv
 
 # ingore tex output and log files
 **/aux
+
+/.quarto/
