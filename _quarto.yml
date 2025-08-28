@@ -16,20 +16,34 @@ website:
         - "numpy/arrays.ipynb"
         - "numpy/interpolation.ipynb"
         - "numpy/random.ipynb"
-        - "numpy/vector_matrices.ipynb"
+        - "numpy/vectors_matrices.ipynb"
         - "numpy/vectorfields.ipynb"
         - "numpy/broadcasting.ipynb"
     - section: "SciPy"
       contents:
         - "scipy/constants.ipynb"
-        - "scipy/curvefit.ipynb"
         - "scipy/functions.ipynb"
+        - "scipy/curvefit.ipynb"
         - "scipy/integration.ipynb"
+    - section: "SymPy"
+      contents:
+        - "sympy/expressions.ipynb"
+        - "sympy/equations.ipynb"
+        - "sympy/calculus.ipynb"
+    - section: "Matplotlib"
+      contents:
+        - "matplotlib/matplotlib.ipynb"
+    - section: "Pint"
+      contents:
+        - "pint/pint.ipynb"
+    - section: "Polars"
+      contents:
+        - "polars/intro_polars.ipynb"
 
 format:
   html:
     theme: cosmo
     toc: true
-    code-fold: true
-    code-summary: "Click to show/hide code"
+    toc-depth: 4
+    code-fold: false
     css: styles.css

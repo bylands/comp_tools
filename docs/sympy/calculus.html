@@ -103,6 +103,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -116,9 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Computational Tools for Physics
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sympy/expressions.html">SymPy</a></li><li class="breadcrumb-item"><a href="../sympy/calculus.html">Calculus (Symbolic)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -167,12 +194,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../numpy/random.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The NumPy Random Module</span></a>
+ <span class="menu-text">NumPy Random Module</span></a>
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">numpy/vector_matrices.ipynb</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../numpy/vectors_matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vectors and Matrices in NumPy</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../numpy/vectorfields.html" class="sidebar-item-text sidebar-link">
@@ -204,14 +234,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../scipy/curvefit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Curve Fit</span></a>
+  <a href="../scipy/functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../scipy/functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Functions</span></a>
+  <a href="../scipy/curvefit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curve Fit</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -222,18 +252,106 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">SymPy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sympy/expressions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Symbolic Calculations with SymPy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sympy/equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solving Equations with SymPy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sympy/calculus.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Calculus (Symbolic)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Matplotlib</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../matplotlib/matplotlib.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matplotlib</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pint</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pint/pint.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pint: Calculations with units</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Polars</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../polars/intro_polars.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polars</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#derivatives" id="toc-derivatives" class="nav-link active" data-scroll-target="#derivatives">Derivatives</a></li>
+  <li><a href="#indefinite-integrals" id="toc-indefinite-integrals" class="nav-link" data-scroll-target="#indefinite-integrals">Indefinite integrals</a></li>
+  <li><a href="#definite-integrals" id="toc-definite-integrals" class="nav-link" data-scroll-target="#definite-integrals">Definite Integrals</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sympy/expressions.html">SymPy</a></li><li class="breadcrumb-item"><a href="../sympy/calculus.html">Calculus (Symbolic)</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Calculus (Symbolic)</h1>
 </div>
@@ -253,73 +371,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><em>SymPy</em> contains methods to analytically determine derivatives and integrals of functions.</p>
-<div id="1352184e-7357-442d-b648-9de0c89b35bf" class="cell">
-<details class="code-fold">
-<summary>Click to show/hide code</summary>
+<div id="1352184e-7357-442d-b648-9de0c89b35bf" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <section id="derivatives" class="level4">
 <h4 class="anchored" data-anchor-id="derivatives">Derivatives</h4>
 <p>The <em>diff</em> function can be used to take derivates of functions.</p>
-<div id="7d0bcfbe-814f-4b05-969d-2d404e558124" class="cell">
-<details class="code-fold">
-<summary>Click to show/hide code</summary>
+<div id="7d0bcfbe-814f-4b05-969d-2d404e558124" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sp.Symbol(<span class="st">'x'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> sp.cos(x) <span class="op">+</span> sp.tan(x)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sp.diff(f, x)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>display(f, df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle \cos{\left(x \right)} + \tan{\left(x \right)}\)</span></p>
 </div>
-<div id="6a54565c-0a73-4c59-b8c8-30961586d0c8" class="cell">
-<details class="code-fold">
-<summary>Click to show/hide code</summary>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle - \sin{\left(x \right)} + \tan^{2}{\left(x \right)} + 1\)</span></p>
+</div>
+</div>
+<div id="6a54565c-0a73-4c59-b8c8-30961586d0c8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="dv">3</span><span class="op">*</span>x<span class="op">-</span><span class="dv">1</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dg <span class="op">=</span> sp.diff(g, x)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>display(g, dg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle x^{2} + 3 x - 1\)</span></p>
 </div>
-<div id="87fdcd5b-fb14-4a4b-9f8a-b6cf8bc5f2d8" class="cell">
-<details class="code-fold">
-<summary>Click to show/hide code</summary>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 2 x + 3\)</span></p>
+</div>
+</div>
+<div id="87fdcd5b-fb14-4a4b-9f8a-b6cf8bc5f2d8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> sp.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dh <span class="op">=</span> sp.diff(h, x)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>display(h, dh)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle e^{- \frac{x^{2}}{2}}\)</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle - x e^{- \frac{x^{2}}{2}}\)</span></p>
+</div>
 </div>
 </section>
 <section id="indefinite-integrals" class="level4">
 <h4 class="anchored" data-anchor-id="indefinite-integrals">Indefinite integrals</h4>
 <p>Indefinite integrals can be computed with the <em>integrate</em> function. The additive constant is not shown in the output.</p>
-<div id="286221e9-ac6d-4032-9e07-9ae15683c0b2" class="cell">
-<details class="code-fold">
-<summary>Click to show/hide code</summary>
+<div id="286221e9-ac6d-4032-9e07-9ae15683c0b2" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sp.integrate(sp.sin(x), x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="5">
+<p><span class="math inline">\(\displaystyle - \cos{\left(x \right)}\)</span></p>
 </div>
-<div id="dccc8b54-45ce-4bb7-b158-2d7d7cf72cdf" class="cell">
-<details class="code-fold">
-<summary>Click to show/hide code</summary>
+</div>
+<div id="dccc8b54-45ce-4bb7-b158-2d7d7cf72cdf" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> sp.log(x)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>sp.integrate(f, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="6">
+<p><span class="math inline">\(\displaystyle x \log{\left(x \right)} - x\)</span></p>
+</div>
 </div>
 </section>
 <section id="definite-integrals" class="level4">
 <h4 class="anchored" data-anchor-id="definite-integrals">Definite Integrals</h4>
 <p>For definite integrals, the lower and upper boundary are passed to the <em>integrate</em> function as additional parameters.</p>
-<div id="a39d6c57-238e-44c4-aeb6-c2b53081b920" class="cell">
-<details class="code-fold">
-<summary>Click to show/hide code</summary>
+<div id="a39d6c57-238e-44c4-aeb6-c2b53081b920" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sp.integrate(sp.cos(x)<span class="op">**</span><span class="dv">2</span>, (x, <span class="dv">0</span>, <span class="dv">2</span><span class="op">*</span>sp.pi))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
+<p><span class="math inline">\(\displaystyle \pi\)</span></p>
 </div>
-<div id="c281e031-25b1-47e0-ae29-bde4ba98ccc8" class="cell">
-<details class="code-fold">
-<summary>Click to show/hide code</summary>
+</div>
+<div id="c281e031-25b1-47e0-ae29-bde4ba98ccc8" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> sp.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span>) <span class="co"># Gaussian function</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sp.integrate(f, (x, <span class="dv">0</span>, sp.oo)) <span class="co"># upper limit is infinity</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="8">
+<p><span class="math inline">\(\displaystyle \frac{\sqrt{\pi}}{2}\)</span></p>
+</div>
 </div>
 
 
