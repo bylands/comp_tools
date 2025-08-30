@@ -1,0 +1,798 @@
+[
+  {
+    "objectID": "sympy/expressions.html",
+    "href": "sympy/expressions.html",
+    "title": "Symbolic Calculations with SymPy",
+    "section": "",
+    "text": "SymPy (www.sympy.org) is a Python library for symbolic mathematics. It can be used to simplify expressions, find formal solutions of equations, or derive or integrate functions.",
+    "crumbs": [
+      "SymPy",
+      "Symbolic Calculations with SymPy"
+    ]
+  },
+  {
+    "objectID": "sympy/expressions.html#symbols",
+    "href": "sympy/expressions.html#symbols",
+    "title": "Symbolic Calculations with SymPy",
+    "section": "Symbols",
+    "text": "Symbols\nBefore symbols like \\(x\\), \\(y\\), \\(a\\), \\(b\\), etc. can be used in expressions, they have to be defined.\n\n\nCode\nx = sp.Symbol('x') # define a single symbol\ny, z = sp.symbols('y z') # define multiple symbols\n\nr = sp.Symbol('p', real=True) # define a real quantity (as opposed to a complex one)\np = sp.Symbol('p', positive=True) # define a positive quantity\n\ndisplay((x + y)/z) # display expression containing symbols",
+    "crumbs": [
+      "SymPy",
+      "Symbolic Calculations with SymPy"
+    ]
+  },
+  {
+    "objectID": "sympy/expressions.html#expressions",
+    "href": "sympy/expressions.html#expressions",
+    "title": "Symbolic Calculations with SymPy",
+    "section": "Expressions",
+    "text": "Expressions\nExpressions contain symbols, functions and numerical constants. They can be simplified, expanded or factored.\n\n\nCode\nexp1 = (x + y) * (x - y)\ndisplay(exp1.expand()) # expand expression\n\n\n\n\nCode\nexp2 = 6 * x**2 - x -2\ndisplay(exp2.factor()) # factor expression\n\n\n\n\nCode\nexp3 = 2 * sp.sin(x)**2 + 2 * sp.cos(x)**2\ndisplay(exp3.simplify()) # simplify expression (trigonometric identity)",
+    "crumbs": [
+      "SymPy",
+      "Symbolic Calculations with SymPy"
+    ]
+  },
+  {
+    "objectID": "sympy/expressions.html#substitution",
+    "href": "sympy/expressions.html#substitution",
+    "title": "Symbolic Calculations with SymPy",
+    "section": "Substitution",
+    "text": "Substitution\nSymbols can be substituted by an expression. This can also be used to numerically evaluate an expression. Multiple substitutions can be passed as a dictionary.\n\n\nCode\na, b = sp.symbols('a b')\n\nexp4 = x**3\ndisplay(exp4.subs(x, a + b).expand()) # substitute x with (a + b) and expand\n\n\n\n\nCode\nexp5 = sp.sin(x)\ndisplay(exp5.subs(x, sp.pi/4)) # evaluate expression at a specific value\n\n\n\n\nCode\nexp6 = x**2 + 3*x*y - y**2\nvals = {x: 1, y: 2}\ndisplay(exp6.subs(vals)) # substitute multiple symbols",
+    "crumbs": [
+      "SymPy",
+      "Symbolic Calculations with SymPy"
+    ]
+  },
+  {
+    "objectID": "sympy/expressions.html#numerical-evaluation",
+    "href": "sympy/expressions.html#numerical-evaluation",
+    "title": "Symbolic Calculations with SymPy",
+    "section": "Numerical evaluation",
+    "text": "Numerical evaluation\nDecimal values can be enforced with a numerical evaluation.\n\n\nCode\nexp7 = sp.sqrt(2) + sp.sqrt(3)\ndisplay(exp7) # display expression with square roots\ndisplay(sp.N(exp7)) # numerical evaluation of expression with square roots\ndisplay(sp.N(exp7, 20)) # numerical evaluation with 20 digits precision\n\n\n\n\nCode\nexp8 = sp.sin(1) + sp.cos(2) * sp.exp(-3)\ndisplay(exp8)\ndisplay(sp.N(exp8))",
+    "crumbs": [
+      "SymPy",
+      "Symbolic Calculations with SymPy"
+    ]
+  },
+  {
+    "objectID": "sympy/exercises/current/current.html",
+    "href": "sympy/exercises/current/current.html",
+    "title": "Current in a Capacitor Circuit",
+    "section": "",
+    "text": "When a capacitor (see later) is charged on a voltage \\(V_0\\) through a resistor \\(R\\), the charge stored in the capacitor is given by \\[ Q(t) = C \\cdot V_0 \\cdot \\left(1 - e^{-\\frac{t}{\\tau}} \\right) \\]\nwhere \\(C\\) is the capacitance ([\\(C\\)] = C/V = F (Farad)), and \\(\\tau=RC\\) is called the time constant.\nUsing SymPy to derive the charge with respect to time, find the expression for the current flowing during the charging process. Verify that the expression has the correct units.\n\nMaximum voltage and current\nFind formal expressions for the voltage and current as functions of the resistance and the power dissipated in the resistor.\nSince \\(V_0/R\\) is a current, the expression has the correct unit if \\(RC\\) has the unit of a time. This can easily be verified, e.g. using Pint.\n\n\nGraph charge and current\nGraph the charge and current vs time for the following values: \\(V_0\\) = 12 V, \\(R\\) = 1.5 kOhm, \\(C\\) = 330 microF."
+  },
+  {
+    "objectID": "sympy/calculus.html",
+    "href": "sympy/calculus.html",
+    "title": "Calculus (Symbolic)",
+    "section": "",
+    "text": "SymPy contains methods to analytically determine derivatives and integrals of functions.\nCode\nimport sympy as sp",
+    "crumbs": [
+      "SymPy",
+      "Calculus (Symbolic)"
+    ]
+  },
+  {
+    "objectID": "sympy/calculus.html#derivatives",
+    "href": "sympy/calculus.html#derivatives",
+    "title": "Calculus (Symbolic)",
+    "section": "Derivatives",
+    "text": "Derivatives\nThe diff function can be used to take derivates of functions.\n\n\nCode\nx = sp.Symbol('x')\nf = sp.cos(x) + sp.tan(x)\ndf = sp.diff(f, x)\ndisplay(f, df)\n\n\n\n\nCode\ng = x**2+3*x-1\ndg = sp.diff(g, x)\ndisplay(g, dg)\n\n\n\n\nCode\nh = sp.exp(-x**2/2)\ndh = sp.diff(h, x)\ndisplay(h, dh)",
+    "crumbs": [
+      "SymPy",
+      "Calculus (Symbolic)"
+    ]
+  },
+  {
+    "objectID": "sympy/calculus.html#indefinite-integrals",
+    "href": "sympy/calculus.html#indefinite-integrals",
+    "title": "Calculus (Symbolic)",
+    "section": "Indefinite integrals",
+    "text": "Indefinite integrals\nIndefinite integrals can be computed with the integrate function. The additive constant is not shown in the output.\n\n\nCode\nsp.integrate(sp.sin(x), x)\n\n\n\n\nCode\nf = sp.log(x)\nsp.integrate(f, x)",
+    "crumbs": [
+      "SymPy",
+      "Calculus (Symbolic)"
+    ]
+  },
+  {
+    "objectID": "sympy/calculus.html#definite-integrals",
+    "href": "sympy/calculus.html#definite-integrals",
+    "title": "Calculus (Symbolic)",
+    "section": "Definite Integrals",
+    "text": "Definite Integrals\nFor definite integrals, the lower and upper boundary are passed to the integrate function as additional parameters.\n\n\nCode\nsp.integrate(sp.cos(x)**2, (x, 0, 2*sp.pi))\n\n\n\n\nCode\nf = sp.exp(-x**2) # Gaussian function\nsp.integrate(f, (x, 0, sp.oo)) # upper limit is infinity",
+    "crumbs": [
+      "SymPy",
+      "Calculus (Symbolic)"
+    ]
+  },
+  {
+    "objectID": "scipy/functions.html",
+    "href": "scipy/functions.html",
+    "title": "Functions",
+    "section": "",
+    "text": "SciPy (scipy.org) provides methods to efficiently calculate zeros or extrema of functions (numerically). It also knows about a large number of special function used in various areas of mathematics and physics.",
+    "crumbs": [
+      "SciPy",
+      "Functions"
+    ]
+  },
+  {
+    "objectID": "scipy/functions.html#finding-root-of-function",
+    "href": "scipy/functions.html#finding-root-of-function",
+    "title": "Functions",
+    "section": "Finding root of function",
+    "text": "Finding root of function\nMany equations cannot be solved analytically, e.g. if trigonometric functions are involved. It is still possible to calculate a numerical solution using an appropriate algorithm.\nAs an example, we are going to find the nontrivial solution for the equation\n\\(\\sin(x) = \\frac{1}{2} x\\)\nThis is equivalent to finding a root (i.e. zero) of the function \\(f(x) = \\sin(x) - \\frac{1}{2}\\)\nIn addition to the function, an initial guess for the root has to be provided (e.g. found from a sketch).\n\n\nCode\nimport matplotlib.pyplot as plt\n\nimport numpy as np\nfrom scipy.optimize import root_scalar\n\n\n# define function\ndef f(x):\n    return np.sin(x) - x/2\n\nsol = root_scalar(f, x0=2) # find root with initial guess x=2\n\nsolx = sol.root\nsoly = solx/2\n\nx = np.linspace(0, np.pi, 100)\ny = np.sin(x)\n\nplt.plot(x, y, label=r'$f(x)=\\sin(x)$')\nplt.plot(x, x/2, label=r'$g(x)=\\frac{x}{2}$')\nplt.scatter(solx, soly, c='red')\nplt.legend()\nplt.grid()\nplt.show()",
+    "crumbs": [
+      "SciPy",
+      "Functions"
+    ]
+  },
+  {
+    "objectID": "scipy/functions.html#finding-minimum-or-maximum",
+    "href": "scipy/functions.html#finding-minimum-or-maximum",
+    "title": "Functions",
+    "section": "Finding minimum or maximum",
+    "text": "Finding minimum or maximum\nThe method scipy.fmin() numerically calculates the (local) minimum of a function near an initial guess. The same method can be used to find a maximum if applied to -f(x) instead of f(x).\n\n\nCode\nfrom scipy.optimize import fmin\n\n# define function\ndef g(x):\n    return np.sin(x**2) * np.exp(-x/3)\n\nsol = fmin(g, x0=2, disp=False) # find minimum with initial guess x=2\n\nx_min = sol[0]\ny_min = g(x_min)\n\nx = np.linspace(0, 2*np.pi, 500)\nprint(f'minimum at x={x_min:.3f}, g(x)={y_min:.3f}')\n\nsol2 = fmin(lambda x: -g(x), x0=1, disp=False) # find maximum with initial guess x=1\n\nx_max = sol2[0]\ny_max = g(x_max)\n\nprint(f'maximum at x={x_max:.3f}, g(x)={y_max:.3f}')\n\nplt.plot(x, g(x), label=r'$g(x)$')\nplt.scatter(x_min, y_min, c='green', label='minimum')\nplt.scatter(x_max, y_max, c='red', label='maximum')\nplt.legend()\nplt.grid\nplt.show()",
+    "crumbs": [
+      "SciPy",
+      "Functions"
+    ]
+  },
+  {
+    "objectID": "scipy/functions.html#special-functions",
+    "href": "scipy/functions.html#special-functions",
+    "title": "Functions",
+    "section": "Special functions",
+    "text": "Special functions\nThere are a lot of special functions used in science whose values cannot be calculated easily, e.g. Elliptic functions, Bessel functions, etc.\nAs an example we use a special function in SciPy to calculate the area under the Gaussian function (normal distribution):\n\\(P(x) = \\frac{1}{\\sqrt{2\\pi}} \\int_{-\\infty}^x \\exp(-t^2/2) dt\\)\n\n\nCode\nfrom scipy.special import ndtr\n\nprint(f'A(0.5) = {ndtr(-0.2)}')\n\nA = ndtr(1) - ndtr(-1) # area between x1 = -1 and x2 = +1\nprint(f'area between -1 and 1: A = {A}') # (corresponds to ± 1 standard deviation)",
+    "crumbs": [
+      "SciPy",
+      "Functions"
+    ]
+  },
+  {
+    "objectID": "scipy/exercises/roots/roots.html",
+    "href": "scipy/exercises/roots/roots.html",
+    "title": "Roots",
+    "section": "",
+    "text": "Find all points where \\(f(x) = \\cos(x^2)\\) and \\(g(x) = \\frac{x}{2}\\) intersect.\n\nGraphical solution\nFind approximate values for the \\(x\\) values of the intersection points using a graph of \\(f(x)\\) and \\(g(x)\\).\n\n\nNumerical solution\nFind numerical values for the intersection points by numerically finding the roots of \\(f(x) - g(x)\\)."
+  },
+  {
+    "objectID": "scipy/exercises/loop/loop.html",
+    "href": "scipy/exercises/loop/loop.html",
+    "title": "Magnetic Field of a Current Loop",
+    "section": "",
+    "text": "The magnetic field along the axis perpendicular to the centre of a circular current loop is given by\n\\(B(z) = \\frac{\\mu_0 N I}{2} \\frac{r^2}{\\left(r^2 + z^2\\right)^{3/2}}\\)\nwhere \\(r\\) is the radius of the loop, \\(I\\) the current through the loop, and \\(z\\) the distance of a point on the axis from the centre of the loop.\nThe data below was measured with a Hall sensor for a coil with \\(N = 10\\) turns, radius \\(r\\) = (10.0 ± 0.2) cm and a current \\(I\\) = (9.50 ± 0.02) A.\n\n\nCode\nimport numpy as np\n\n# distance to centre in m, \nz = np.array([0, 20, 40, 60, 80, 100, 120, 160, 200]) * 1e-3\ndz = 5e-3 # uncertainty for z\n\n# magnetic field in T\nB = np.array([5.8, 5.3, 4.7, 3.6, 2.8, 2.0, 1.3, 0.8, 0.5]) * 1e-4\ndB = 10e-6 # uncertainty for B\n\n\nVerify the theoretical expression with the measured data. Derive the best fit value for the magnetic permeability \\(\\mu_0\\).\n\nResidual plot\nAdd a residual plot to verify the quality of the fit."
+  },
+  {
+    "objectID": "scipy/exercises/lightbulb/lightbulb.html",
+    "href": "scipy/exercises/lightbulb/lightbulb.html",
+    "title": "Light Bulb",
+    "section": "",
+    "text": "A simple light bulb has a nonlinear current vs voltage characteristic, whereas the resistance vs. current characteristic is (approximately) linear. Investigate these relations using experimental data.\nWith \\(R = R_0 + k I\\) it follows for the voltage:\n\\(V = R I = (R_0 + k I) I = R_0 I + k I^2\\)\nIt follows for the current as a function of the voltage:\n\\(I = \\frac{-R_0 \\pm \\sqrt{R_0^2+4 k V}}{2 k}\\)\nThe positive sign has to be taken for a positive current.\n\n\nCode\nimport numpy as np\n\n# voltage in V\nV = np.array([2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24])\ndV = 0.05 # voltage uncertainty in V\n\n# current in mA\nI = np.array([27.7, 41.6, 53.1, 62.6, 71.8, 80.2, \n              87.8, 96.0, 102.0, 108.4, 114.9, 120.9])\ndI = 0.5 # current uncertainty in mA\n\n\n\nResistance values\nCalculate the resistance values and their uncertainties from the measured voltage and current values.\n\n\nResistance vs Current\nFit a linear function to the resistance vs current data and verify the quality of the fit with a resistance vs current graph.\n\n\nCurrent vs Voltage\nUsing the fit parameters from the fit above, calculate the expected current values. Graph the expected current values vs voltage and compare them to the measured values. Discuss the quality of the prediction with a residual plot."
+  },
+  {
+    "objectID": "scipy/exercises/electron_mass/electron_mass.html",
+    "href": "scipy/exercises/electron_mass/electron_mass.html",
+    "title": "Charge and Mass",
+    "section": "",
+    "text": "An object is charged with +230 nC. Calculate how its mass changes due to the electrons taken away. Use the values for electron charge and mass in scipy.constants."
+  },
+  {
+    "objectID": "scipy/exercises/coil/coil.html",
+    "href": "scipy/exercises/coil/coil.html",
+    "title": "Magnetic Coil",
+    "section": "",
+    "text": "Five electromagnets consist of coils with the same dimensions (length and diameter), but have different numbers of turns. The strength of the magnetic field at the centre of the coils is measured for a current of (1.00 ± 0.01) A. The uncertainty for the magnetic field strength is 0.005 mT\nThe theoretical value for the magnetic field at the centre of the coil is:\n\\(B = \\mu_0\\frac{N I}{\\sqrt{L^2 + d^2}}\\)\nwhere \\(L\\) is the length and \\(d\\) the diameter of the coil.\nUsing the measured data, verify if the magnetic field is proportional to the number of turns and determine the fit parameter.\nThe length of the coils is (60 ± 1) mm and the diameter (56 ± 1) mm. Calculate the expected ratio B/N and compare it to the fit parameter."
+  },
+  {
+    "objectID": "scipy/exercises/biased_die/biased_die.html",
+    "href": "scipy/exercises/biased_die/biased_die.html",
+    "title": "Biased Die",
+    "section": "",
+    "text": "You have to verify if a die is biased. The data in the file eyes.csv contains the outcomes for a large number of rolls of the die. Use a \\(\\chi^2\\) test to challenge the hypothesis that the die is unbiased.\n\n\nCode\nimport numpy as np\nfrom scipy.stats import chisquare\n\neyes = np.loadtxt('eyes.csv')\n\n\n\nCalculate expected and observed counts\nCalculate the expected counts (for a fair die) and the observed counts (based on the data).\n\n\nHypothesis test\nUsing the method chisquared in scipy.stats, perform a \\(\\chi^2\\) test on the data and decide whether the die can be assumed to be fair.\nFor \\(p&lt;0.05\\) it is very unlikely that the hypothesis is true. We have to assume that the die is biased.\n*** Graphical representation Make a graph for the observed counts vs the number of eyes including the statistical errors and show that one outcome is significantly higher than the expected value.\nIt is evident from the histogram that the outcome 1 eye occurs significantly too often. The average without the first outcome is lower than the expected value and seems to be compatible with equal probability for the other five faces of the die."
+  },
+  {
+    "objectID": "scipy/curvefit.html",
+    "href": "scipy/curvefit.html",
+    "title": "Curve Fit",
+    "section": "",
+    "text": "A common task in physics is to visualise measured data and to compare it to a theoretical prediction. If there is at least one free parameter (e.g. the acceleration of a moving object), we have to optimise the function to fit to the data as well as possible. This is referred to as a curve fit.",
+    "crumbs": [
+      "SciPy",
+      "Curve Fit"
+    ]
+  },
+  {
+    "objectID": "scipy/curvefit.html#example-uniform-motion",
+    "href": "scipy/curvefit.html#example-uniform-motion",
+    "title": "Curve Fit",
+    "section": "Example: Uniform motion",
+    "text": "Example: Uniform motion\nA low-friction cart slides down a slightly inclined track. Its position is measured at regular time intervals. We assume errors of 0.05 s for the time and 0.1 cm for the position measurements.\n\nDefine arrays for measured data\n\n\nCode\nimport numpy as np\n\ntime = np.array([0.00, 0.50, 1.00, 1.50, 2.00, 2.50, 3.00, 3.50]) # time in s\npos = np.array([12.3, 15.2, 24.3, 39.4, 60.5, 87.1, 120.3, 159.2]) # position in cm\n\ndt = 0.05 # error for time in s\ndx = 0.2 # error for position in cm\n\n\n\n\nVisualise data with a scatter plot\n\n\nCode\nimport matplotlib.pyplot as plt\n\nplt.errorbar(time, pos, fmt='.', color='blue', xerr=dt, yerr=dx, capsize=2)\nplt.xlabel('time (s)')\nplt.ylabel('position (cm)')\nplt.show()\n\n\nThe error bars are so small that they can barely be seen. In order to visually confirm the quality of a fit function later on, we will have to find a solution to this problem.\n\n\nFit a model to the data\nFor a quantitative analysis we usually want to compare the measured data to a theoretical model. This can be done by fitting a function to the data. The fit parameters are related to physical parameters.\nWe expect the motion to have a constant acceleration, i.e. the position should be a quadratic function of time.\n\n\nCode\nfrom scipy.optimize import curve_fit\n\n\ndef f(t, a, v0, x0):\n    \"\"\"\n    Fit function for a motion with constant acceleration.\n\n    The parameters are:\n    t    time\n    a    acceleration\n    v0   initial velocity\n    x0   initial position\n    The function returns the position at time t.\n    \"\"\"\n    return a/2 * t**2 + v0 * t + x0\n\n# The method curve_fit returns two lists:\n# coeff contains the fit parameters\n# pcov contains the covariance matrix, whose diagonal elements are a measure\n# of how accurately the fit parameters match the data (see below)\ncoeff, pcov = curve_fit(f, time, pos)\na, v0, x0 = coeff # fit parameters are in the order of the function definition\n\n\n\n\nVisualise data and model\n\n\nCode\nt = np.linspace(0, max(time), 100) # array with evenly spaced t values\nx = f(t, a, v0, x0) # array with positions predicted by fit function\n\nplt.plot(t, x, color='red', label='square fit')\nplt.errorbar(time, pos, fmt='.', color='blue', xerr=dt, yerr=dx, label='data')\nplt.xlabel('time (s)')\nplt.ylabel('position (cm)')\nplt.legend()\nplt.show()\n\n\n\nResidual plot\nThe model seems to describe the measured data quite accurately. To see even better if the fit function passes through the error ranges of the data points, we can create a residual plot, i.e. a plot of the deviation between the data points and the fit function.\n\n\nCode\nres = pos - f(time, a, v0, x0) # calculate residuals (measured - predicted)\n\nplt.errorbar(range(1, len(time)+1), res, fmt='.', color='blue', xerr=dt, yerr=dx, capsize=2)\nplt.xlabel('data point')\nplt.ylabel('residuals (cm)')\nplt.grid()\nplt.show()\n\n\nThe horizontal axis is within the error ranges for all but one data point (no. 6). This is quite convincing evidence that the theoretical model is a good description for the measured data.\n\n\n\nErrors of fit parameters\nThe curve_fit method returns the covariance matrix as a second return value. The diagonal elements are the squared errors for the fit parameters.\n\n\nCode\nsq_errors = np.diag(pcov) # assign diagonal elements of covariance matrix\nda, dv0, dx0 = np.sqrt(sq_errors) # square root corresponds to errors of fit parameters\n\nprint(f'acceleration:      a = ({a:.2f} ± {da:.2f}) cm/s^2')\nprint(f'initial velocity:  v_0 = ({v0:.2f} ± {dv0:.2f}) cm/s')\nprint(f'initial position:  x_0 = ({x0:.2f} ± {dx0:.2f}) cm')",
+    "crumbs": [
+      "SciPy",
+      "Curve Fit"
+    ]
+  },
+  {
+    "objectID": "polars/polars.html",
+    "href": "polars/polars.html",
+    "title": "Polars",
+    "section": "",
+    "text": "There are several Python libraries that can be used to analyse large datasets. The most popular one is Pandas (pandas.pydata.org), which is used for numerous projects in data science.\nA modern alternative to Pandas is Polars (pola.rs), which is considered to be more efficient and faster than Pandas. If you are not invested in Pandas, there is no reason why you should not start with Polars as the data manipulation tool of your choice."
+  },
+  {
+    "objectID": "polars/polars.html#dataframes",
+    "href": "polars/polars.html#dataframes",
+    "title": "Polars",
+    "section": "DataFrames",
+    "text": "DataFrames\nPolars works with DataFrames. A DataFrame can be compared to a spreadsheet with a number of columns each containing the same number of rows. Each column contains data of a given datatype (e.g. string, date, float).\n\nCreate a dataframe\nA dataframe can be created in different way, e.g. from a Python dictionary, from a file or a url, etc.\n\n\nCode\n# create dataframe from dictionary\ngrades = pl.DataFrame(\n    {\n        'subject': ['maths', 'physics', 'biology', 'chemistry'],\n        'grade': [4.5, 5.5, 5.5, 5],\n        'teacher': ['Bernoulli', 'Einstein', 'Darwin', 'Laue']\n    }\n)\n\ngrades\n\n\n\n\nCode\n# create dataframe from csv file\npath = 'data/pokemon.csv'\npokemons = pl.read_csv(path, infer_schema_length=None)\n\npokemons # displays first 5 and last 5 rows; shape provides information about the number of rows and columns\n\n\n\n\nFirst look at dataframe\n\n\nCode\nprint(f'shape: {pokemons.shape}') # show number of rows and number of columns\n\n\n\n\nCode\ncols = pokemons.columns # list of column names\ndt = pokemons.dtypes # list of datatypes\n\nfor c, d in zip(cols, dt):\n    print(f'{c}: {d}')\n\n\n\n\nCode\npokemons.head(5) # display first n rows\n\n\n\n\nCode\npokemons.tail(5) # display last n rows\n\n\n\n\nCode\npokemons.describe() # provide some statistical data about dataframe\n\n\n\n\nSelecting Columns\nSpecific columns can be selected by column name using the select method. Multiple columns can be selected using a list of column names.\n\n\nCode\ngrades.select('teacher') # select column 'teacher'\n\n\n\n\nCode\npokemons.select(['name', 'classfication']) # select columns 'name' and 'classfication'\n\n\n\n\nAdding new columns\nColumns can be added using the method with_columns. The new column(s) can be based on existing columns. The alias method is used to rename the new column.\n\n\nCode\n# Add a column with the sum of 'attack' and 'defense'\n(pokemons\n    .select(['attack', 'defense'])\n    .with_columns((pl.col('attack') + pl.col('defense')).alias('att+def'))\n)\n\n\n\n\nSorting\nThe dataframe can be sorted based on the values in a column.\n\n\nCode\ngrades.sort('teacher') # sort by teacher's name\n\n\n\n\nCode\ngrades.sort('subject', descending=True) # sort by subject name (descending)\n\n\n\n\nFiltering rows\nSpecific rows can be selected based on a condition using the filter method.\n\n\nCode\ngrades.filter(pl.col('subject') != 'physics') # select all rows where the subject is not physics\n\n\n\n\nCode\ngrades.filter(pl.col('grade') &gt; 5) # select all rows with grades greater than 5\n\n\n\n\nCode\n# select all rows where 'attack' is greater than 'defense'\n(pokemons\n    .select(['name', 'attack', 'defense'])\n    .filter(pl.col('attack') &gt; pl.col('defense'))\n)\n\n\n\n\nOperations on columns\nThere are many operations acting on the values in a column, e.g. sum, mean, etc.\n\n\nCode\ngrades.select(pl.mean('grade')) # calculate the average grade\n\n\n\n\nCode\n# calculate the average of 'attack' and the sum of 'defense'\npokemons.select([pl.mean('attack'), pl.sum('defense')])\n\n\n\n\nGrouping and aggregating\nData can often be grouped based on the value in one column. Aggregation allows to perform calculations per group.\n\n\nCode\n# dataframe containt grades for four subjects in order of when they were received\ngradebook = pl.DataFrame(\n    {\n        'subject': ['P', 'M', 'C', 'B', 'M', 'C', 'P', 'B', 'M', 'P', 'M', 'C', 'B'],\n        'grade': [5.5, 4.5, 4.5, 5, 5, 4.5, 3.5, 6, 5, 4, 4.5, 5, 5.5]\n    }\n)\n\n# calculate the average per subject\nmean_grades = (gradebook\n .group_by('subject')\n .agg(pl.col('grade').mean())\n)\n\nmean_grades\n\n\n\n\nCode\n# group by 'type1', then calculate mean attack and defense per group, sort by mean attack\n(pokemons\n    .select(['name', 'type1', 'attack', 'defense'])\n    .group_by('type1')\n    .agg(pl.col('attack').mean(), pl.col('defense').mean())\n    .sort('attack')\n)\n\n\n\n\nPlotting data\nData can be visualised using most plotting libraries. There are some shortcuts built into Polars which are based on Altair (https://altair-viz.github.io/gallery/index.html).\n\n\nCode\n# diagram for the maths grades\n(gradebook\n    .filter(pl.col('subject') == 'M')\n    .with_row_index('test_no', offset=1)\n    .plot.line(\n        x='test_no',\n        y='grade'\n    )\n)\n\n\n\n\nCode\nimport altair as alt\n\n# For a nicer version we make use of the underlying library's (Altair) more advanced formatting options\nM_grades = (gradebook\n    .filter(pl.col('subject') == 'M')\n    .with_row_index('test_no', offset=1)\n           )\n\nalt.Chart(M_grades).mark_line().encode(\n    alt.Y('grade:Q').scale(domain=(3, 6)),\n    x='test_no',\n)\n\n\n\n\nCode\n# histogram for the different type1 options\n(pokemons\n .select('type1')\n .group_by('type1')\n .agg(pl.len().alias('frequency'))\n .plot.bar(\n     x='type1',\n     y='frequency'\n )\n)"
+  },
+  {
+    "objectID": "polars/exercises/minor_planets/minor_planets.html",
+    "href": "polars/exercises/minor_planets/minor_planets.html",
+    "title": "Minor Planets",
+    "section": "",
+    "text": "You are going to analyse the orbital data for some 1.5 million minor planets in our solar system using Polars.\n\nReading data\nThe code segment below reads the data from a text file. The format of the data in the text file is described in https://minorplanetcenter.net/iau/info/MPOrbitFormat.html. We are only interested in two columns, the eccentricity and the semi-major axis.\n\n\nCode\nimport polars as pl\n\nmp = pl.read_csv(\n    \"mpcorb.txt\",\n    has_header = False,\n    skip_rows = 45,\n    new_columns = ['full_str']\n)\n\ncolumn_names = [ 'ecc', 'a' ] # major semi axis\n\nslice_tuples = [(71, 9), (93, 11)]\n\ndata = mp.with_columns(\n    [\n        pl.col('full_str').str.slice(slice_tuple[0], slice_tuple[1]).str.strip_chars().cast(pl.Float32).alias(col)\n        for slice_tuple, col in zip(slice_tuples, column_names)\n    ]\n).drop('full_str')\n\n\n\n\nHistograms\nMake a histogram of the minor planets with a distance of up to 6 astronomical units from the sun. Add vertical lines at the positions of the first six planets (Mercury to Jupiter).\nMake a histogram for the eccentricities of the minor planets.\nGraph the eccentricity vs the semi-major axis for the minor planets."
+  },
+  {
+    "objectID": "polars/exercises/isotopes/isotopes.html",
+    "href": "polars/exercises/isotopes/isotopes.html",
+    "title": "Isotope Masses",
+    "section": "",
+    "text": "You are going to analyse the masses of the known isotopes.\n\nReading data\nThe data is read from a parquet file. This file format contains the datatypes (e.g. int or float) in addition to the actual values.\n\n\nCode\nimport polars as pl\n\nisotopes = pl.read_parquet('isotopes.parquet')\n\n\n\n\nBrowsing the data\nHave first look at the dataframe and find out about the different columns, the number of isotopes, etc.\n\n\nSome search tasks\nAnswer the following questions: - Which isotope has the greates atomic mass? - How many oxygen isotopes are known? - Which element has the greatest number of isotopes? - Which lead (Pb) isotopes have a non-negligible abundance (column Isotopic Composition) and do their abundances add up to 100 %?"
+  },
+  {
+    "objectID": "polars/exercises/droplet_model/droplet_model (unfinished).html",
+    "href": "polars/exercises/droplet_model/droplet_model (unfinished).html",
+    "title": "Binding Energy",
+    "section": "",
+    "text": "You are going to analyse the binding energies of the known isotopes.\n\nReading data\nThe data is read from a parquet file. This file format contains the datatypes (e.g. int or float) in addition to the actual values.\n\n\nCode\nimport polars as pl\n\nisotopes = pl.read_parquet('data/binding_energy.parquet')\n\n\n\n\nBrowsing the data\nHave a first look at the dataframe and find out about the different columns, the number of isotopes, etc.\n\n\nCode\ndisplay(isotopes.head(10)) # display 10 random rows\n\n\n\n\nCode\nrows, cols = isotopes.shape\nprint(f'{rows} rows and {cols} columns')\n\n\n\n\nSome search tasks\nAnswer the following questions: - Which isotope has the greates atomic mass? - How many carbon isotopes are known? - Which element has the greatest number of isotopes? - Which lead (Pb) isotopes have a non-negligible abundance (column Isotopic Composition) and do their abundances add up to 100 %?\n\n\nCode\n# find the isotope with the maximum atomic mass (Og stands for Oganessum)\nisotopes.filter(pl.col('Atomic Mass') == pl.max('Atomic Mass'))\n\n\n\n\nCode\n# filter carbon (C) isotopes; there are 16 rows\nisotopes.filter(pl.col('Atomic Symbol') == 'C')\n\n\n\n\nCode\n# group by atomic number, aggregate number of isotopes (len), sort by number of isotopes (descending)\n(isotopes\n    .group_by('Z')\n    .agg([\n        pl.col('Atomic Symbol'), \n        pl.len().alias('Number of Isotopes')]\n        )\n    .with_columns(pl.col('Atomic Symbol').list.first())\n    .sort('Number of Isotopes', descending=True)\n) \n\n\n\n\nMass Excess\nThe mass excess (or mass defect) corresponds to the difference between the measured mass (‘Atomic Mass’, unit µu) and the mass number (‘Mass Number’, unit u). In the dataframe it is expressed as the equivalent energy in keV. Add another column to verify this relation.\n\n\nCode\nfrom scipy.constants import eV, m_u, speed_of_light\n\n(isotopes\n    .with_columns(\n        ((pl.col('Atomic Mass') * 1e-6 - pl.col('Mass Number')) * m_u * speed_of_light**2 /(1000 * eV))\n            .alias('My Mass Excess'))\n    .with_columns((pl.col('Mass Excess') / pl.col('My Mass Excess')).alias('rel'))\n    .select(['Atomic Symbol', 'N', 'Mass Excess', 'My Mass Excess', 'rel'])\n).sort('rel')\n\n\n\n\nNuclear Binding Energy\nThe nuclear binding energy of a nucleus can be approximated as the mass difference of its measured mass (‘Atomic Mass’) and the sum of the masses of the protons, neutrons and electrons, multiplied by the square of the speed of light.\nAdd columns for the binding energy (in MeV) and the binding energy divided by the mass number. Compare the calculated value to the values in the column ‘Binding Energy per Nucleus’ in the dataframe. The deviations are mostly due the electronic binding energy, which has been neglected in this calculation.\n\n\nCode\nfrom scipy.constants import m_n, m_p, m_e, u, speed_of_light, eV\n\ndef e_bind(Z, N, m):\n    \"\"\"\n    function to calculate the binding energy of a nucleus\n    Z: atomic number (number of protons)\n    N: neutron number\n    m: atomic mass (in µu)\n    \"\"\"\n    \n    dm = Z * (m_p + m_e) + N * m_n - m * 1e-6 * u # mass difference in kg\n    eb = dm * speed_of_light**2 / eV # binding energy in eV\n    \n    return eb / 1e6 # return binding energy in MeV\n\n\n# add columns for binding energy and binding energy per nucleon\nbinding_energy = isotopes.with_columns(\n    pl.struct(['Z', 'N', 'Atomic Mass'])\n    .map_elements(lambda s: e_bind(s['Z'], s['N'], s['Atomic Mass']), return_dtype=pl.Float64)\n    .alias('Binding Energy')\n).with_columns(\n    (pl.col('Binding Energy') / pl.col('Mass Number'))\n        .alias('My Binding Energy per Nucleon'),\n    pl.col('Binding Energy per Nucleon') / 1000\n)\n\n# dataframe with only highest binding energy for each mass number (used for upper envelope)\nbinding_energy_max = (binding_energy\n                      .sort('Binding Energy per Nucleon')\n                      .group_by('Mass Number')\n                      .agg([\n                          pl.col('Z').last(),\n                          pl.col('N').last(),\n                          pl.col('Atomic Symbol').last(), \n                          pl.col('Binding Energy per Nucleon').max()\n                      ])\n                     )\n\n\n\n\nCode\n(binding_energy.select(['Atomic Symbol', 'Z', 'Mass Number',\n                       pl.col('Binding Energy per Nucleon'), 'My Binding Energy per Nucleon', \n                       (pl.col('Binding Energy per Nucleon') / pl.col('My Binding Energy per Nucleon'))\n                           .abs().alias('rel')])\n    .sort('rel', descending=True)\n)\n\n\n\nGraph\nGraph the nuclear binding energy per nucleon in a diagram. Find the isotope with the highest binding energy per nucleon, i.e. the most stable isotope. List the isotopes with a negative binding energy.\n\n\nCode\nimport altair as alt\n\n# chart1 with all data points\nchart1 = (binding_energy.plot.point(\n            x=alt.X('Mass Number',\n                    scale=alt.Scale(type='log', domain=(1, 300)) # logarithmic scale (looks better)\n                   ),\n            y='Binding Energy per Nucleon',\n            tooltip=[\n                'Atomic Symbol', \n                'Mass Number', \n                alt.Tooltip('Binding Energy per Nucleon', format='.2f') # round values to 2 decimal places in tooltips\n            ]\n            )\n          .properties(width=600, title='Binding Energy per Nucleon')\n        )\n\n\n#chart2 with only max for each mass number\nchart2 = (binding_energy_max.plot.line(\n            x=alt.X('Mass Number',\n                    scale=alt.Scale(type='log', domain=(1, 300))\n                   ),\n            y=alt.Y('Binding Energy per Nucleon',\n                   title='Binding Energy per Nucleon (MeV)'\n                   ),\n            tooltip=['Atomic Symbol', 'Mass Number', 'Binding Energy per Nucleon']\n            )\n        )\n\nchart = ((chart1 + chart2)\n           .configure_point(size=1).configure_line(color='red') # format points and line\n       )\n\nchart\n\n\n\n\nCode\nbinding_energy.filter(pl.col('Binding Energy per Nucleon') == pl.max('Binding Energy per Nucleon'))\n\n\nThe most stable isotope (isotope with highest binding energy per nucleon) is Ni-62.\n\n\nCode\nbinding_energy.filter(pl.col('Binding Energy per Nucleon') &lt; 0)\n\n\n\n\nCode\ndef droplet(N, Z):\n    \n    A = N + Z # number of nucleons\n\n    pairing = 'e' if N % 2 == 0 else 'o'\n    pairing += 'e' if Z % 2 == 0 else 'o'\n    match pairing:\n        case 'ee':\n            aP = 11.18\n        case 'oo':\n            aP = -11.18\n        case _:\n            aP = 0\n            \n\n    EV = 15.76 * A\n    EO = -17.81 * A**(2/3)\n    EC = - 0.711 * Z * (Z - 1) * A**(-1/3)\n    ES = -23.702* (N - Z)**2 / (4 * A)\n    EP = aP * A**(-1/2)\n\n    return (EV + EO + EC + ES + EP) / A\n\n\n\n\nCode\ndroplet = binding_energy_max.with_columns(pl.struct(['Z', 'N']).map_elements(lambda s: droplet(s['Z'], s['N']), return_dtype=pl.Float64).alias('Droplet'))\n\n\n\n\nCode\n#chart3 with binding energy predicted by droplet model (only envelope)\nchart3 = (droplet.plot.line(\n            x=alt.X('Mass Number',\n                    scale=alt.Scale(type='log', domain=(1, 300))\n                   ),\n            y=alt.Y('Droplet',\n                   title='Binding Energy per Nucleon (MeV)'\n                   ),\n            tooltip=['Atomic Symbol', 'Mass Number', 'Droplet']\n            )\n        )\n\n\n\n\nCode\nchart4 = chart + chart3\n\n\n\n\nCode\nchart4"
+  },
+  {
+    "objectID": "polars/exercises/binding_energy/binding_energy.html",
+    "href": "polars/exercises/binding_energy/binding_energy.html",
+    "title": "Binding Energy",
+    "section": "",
+    "text": "You are going to analyse the binding energies of the known isotopes.\n\nReading data\nThe data is read from a parquet file. This file format contains the datatypes (e.g. int or float) in addition to the actual values.\n\n\nCode\nimport polars as pl\n\nisotopes = pl.read_parquet('binding_energy.parquet')\n\n\n\n\nBrowsing the data\nHave a first look at the dataframe and find out about the different columns, the number of isotopes, etc.\n\n\nSome search tasks\nAnswer the following questions: - Which isotope has the greates atomic mass? - How many carbon isotopes are known? - Which element has the greatest number of isotopes? - Which lead (Pb) isotopes have a non-negligible abundance (column Isotopic Composition) and do their abundances add up to 100 %?\n\n\nMass Excess\nThe mass excess (or mass defect) corresponds to the difference between the measured mass (‘Atomic Mass’, unit µu) and the mass number (‘Mass Number’, unit u). In the dataframe it is expressed as the equivalent energy in keV. Add another column to verify this relation.\n\n\nNuclear Binding Energy\nThe nuclear binding energy of a nucleus can be approximated as the mass difference of its measured mass (‘Atomic Mass’) and the sum of the masses of the protons, neutrons and electrons, multiplied by the square of the speed of light.\nAdd columns for the binding energy (in MeV) and the binding energy divided by the mass number. Compare the calculated value to the values in the column ‘Binding Energy per Nucleus’ in the dataframe. The deviations are mostly due the electronic binding energy, which has been neglected in this calculation.\n\nGraph\nGraph the nuclear binding energy per nucleon in a diagram. Find the isotope with the highest binding energy per nucleon, i.e. the most stable isotope. List the isotopes with a negative binding energy."
+  },
+  {
+    "objectID": "pint/exercises/pressure/pressure.html",
+    "href": "pint/exercises/pressure/pressure.html",
+    "title": "Pressure",
+    "section": "",
+    "text": "In some cases, pressure is commonly expressed in pounds per square inch (psi), e.g. for the pressure in tires. In this context, pound refers to pound-force, i.e. the gravitational force corresponding to one pound of mass.\nUsing Pint, find the conversion factor from psi to pascal by converting pound-force and inch to SI units. Compare the result to the direct conversion from psi to pascal.\n\nTire pressure\nFor a medium car, the pressure should usually be about 36 psi. Calculate the force acting on 1 cm^2 of the tire."
+  },
+  {
+    "objectID": "pint/exercises/circuit/circuit.html",
+    "href": "pint/exercises/circuit/circuit.html",
+    "title": "Circuit",
+    "section": "",
+    "text": "Meters are used to measure the voltage and the current for an electric circuit. The measured values (with errors) are (12.32 ± 0.01) V and (37.4 ± 0.2) mA.\n\nResistance\nCalculate the reistance (including error).\n\n\nPower\nCalculate the power dissipated in the circuit (including its error).\n\n\nCapacity\nHow long can the circuit run on a battery with capacity (17000 ± 100) mAh?"
+  },
+  {
+    "objectID": "numpy/vectors_matrices.html",
+    "href": "numpy/vectors_matrices.html",
+    "title": "Vectors and Matrices in NumPy",
+    "section": "",
+    "text": "Vectors can be implemented as arrays with 2 (2D vectors) or 3 (3D vectors) elements. Typical vector operations can easily be calculated.\n\n\nCode\nimport numpy as np\n\nu = np.array([1, 3, 2]) # vector u\nv = np.array([3, 2, 4]) # vector v\n\nprint(f'sum: u + v = {u+v}')\nprint(f'difference: u - v = {u-v}')\nprint(f'scalar multiplication: 3 u = {3*u}')\nprint(f'dot product: u · v = {np.dot(u, v)}')\nprint(f'cross product: u x v = {np.cross(u, v)}')\n\n\nA two-dimensional array (array of vectors) can be used to perform calculations on several vectors at once.\n\n\nCode\nv_list = np.array([[1, 0, 0], [0, 2, 1], [1, 0, 3], [0, 2, 3]])\n\nprint(f'sum of vectors: {np.sum(v_list, axis=0)}')\n\n\nThe keyword argument axis defines the level within the array that is used for the summation. With axis=1 the summation acts on each of the four vectors:\n\n\nCode\nprint(f'sum of components within each vector: {np.sum(v_list, axis=1)}')\n\n\nIf axis is not defined, the values are added independently of their level.\n\n\nCode\nprint(f'sum of all components: {np.sum(v_list)}')",
+    "crumbs": [
+      "NumPy",
+      "Vectors and Matrices in NumPy"
+    ]
+  },
+  {
+    "objectID": "numpy/vectors_matrices.html#vectors",
+    "href": "numpy/vectors_matrices.html#vectors",
+    "title": "Vectors and Matrices in NumPy",
+    "section": "",
+    "text": "Vectors can be implemented as arrays with 2 (2D vectors) or 3 (3D vectors) elements. Typical vector operations can easily be calculated.\n\n\nCode\nimport numpy as np\n\nu = np.array([1, 3, 2]) # vector u\nv = np.array([3, 2, 4]) # vector v\n\nprint(f'sum: u + v = {u+v}')\nprint(f'difference: u - v = {u-v}')\nprint(f'scalar multiplication: 3 u = {3*u}')\nprint(f'dot product: u · v = {np.dot(u, v)}')\nprint(f'cross product: u x v = {np.cross(u, v)}')\n\n\nA two-dimensional array (array of vectors) can be used to perform calculations on several vectors at once.\n\n\nCode\nv_list = np.array([[1, 0, 0], [0, 2, 1], [1, 0, 3], [0, 2, 3]])\n\nprint(f'sum of vectors: {np.sum(v_list, axis=0)}')\n\n\nThe keyword argument axis defines the level within the array that is used for the summation. With axis=1 the summation acts on each of the four vectors:\n\n\nCode\nprint(f'sum of components within each vector: {np.sum(v_list, axis=1)}')\n\n\nIf axis is not defined, the values are added independently of their level.\n\n\nCode\nprint(f'sum of all components: {np.sum(v_list)}')",
+    "crumbs": [
+      "NumPy",
+      "Vectors and Matrices in NumPy"
+    ]
+  },
+  {
+    "objectID": "numpy/vectors_matrices.html#matrices",
+    "href": "numpy/vectors_matrices.html#matrices",
+    "title": "Vectors and Matrices in NumPy",
+    "section": "Matrices",
+    "text": "Matrices\nA two-dimensional array (i.e. a nested array) can also be interpreted as a matrix.\n\n\nCode\nA = np.array([[0, 1, 9], [2, 0, 3], [6, 2, 3]])\nB = np.array([[0, 1, 3], [1, 0, 1], [3, 2, 1]])\nprint(A)\nprint()\nprint(B)\n\n\nElements of the matrix can easily be accessed. Bear in mind that indices are zero-based.\n\n\nCode\nprint(f'Element A(1, 2): {A[0, 1]}') # element in first row, second column\n\n\n\n\nCode\nprint(f'second row: {A[1, :]}')\n\n\n\n\nCode\nprint(f'third column: {A[:, 2]}')\n\n\n\nMatrix multiplication\nThe symbol @ is used for matrix multiplication:\n\n\nCode\nprint(A @ B) # product of A and B\nprint()\nprint(A @ u) # A applied to vector u\n\n\nThe sub-library numpy.linalg contains additional methods to work with matrices.\n\n\nCode\nfrom numpy.linalg import inv, eig\n\n\n\n\nInvert matrix\n\n\nCode\nprint(inv(A)) # inverse of matrix A\nprint()\nprint(A @ inv(A)) # should be identity matrix; deviations are due to numerical errors\nprint()\nprint(np.round(A @ inv(A), decimals=5))\n\n\n\n\nEigenvalues and eigenvectors\n\n\nCode\nvalues, matrix = eig(A)\n\nprint(values) # eigenvalues of A\nprint()\nprint(matrix) # eigenvectors of A as a matrix, columns are eigenvectors\n\n\n\n\nCode\nvectors = matrix.T # eigenvectors correspond to rows of transposed matrix\n\nfor i in range(0, 3):\n    print(np.round(A @ vectors[i] - values[i] * vectors[i], decimals=5)) # verify if A v = \\lambda v",
+    "crumbs": [
+      "NumPy",
+      "Vectors and Matrices in NumPy"
+    ]
+  },
+  {
+    "objectID": "numpy/vectors_matrices.html#example-solve-system-of-linear-equations",
+    "href": "numpy/vectors_matrices.html#example-solve-system-of-linear-equations",
+    "title": "Vectors and Matrices in NumPy",
+    "section": "Example: Solve system of linear equations",
+    "text": "Example: Solve system of linear equations\nSolve the following system of linear equations:\n\\(x + 2y + 3z = 13\\)\n\\(y - z = -2\\)\n\\(2x - y + z = 6\\)\nThe system can be written as\n\\(M \\begin{pmatrix} x \\\\ y \\\\ z \\end{pmatrix} = \\vec{b}\\)\nwith \\(M = \\begin{pmatrix} 1 & 2 & 3 \\\\ 0 & 1 & -1 \\\\ 2 & -1 & 1 \\end{pmatrix} \\quad\\) and \\(\\quad \\vec{b} = \\begin{pmatrix} 13 \\\\ -2 \\\\ 6 \\end{pmatrix}\\)\nThe solution is then \\(\\begin{pmatrix} x \\\\ y \\\\ z \\end{pmatrix} = M^{-1}\\, \\vec{b}\\)\n\n\nCode\nM = np.array([[1, 2, 3], [0, 1, -1], [2, -1, 1]])\nb = np.array([13, -2, 6])\n\nx, y, z = inv(M) @ b\n\nprint(f'The solution is {x=:.1f}, {y=:.1f}, {z=:.1f}')",
+    "crumbs": [
+      "NumPy",
+      "Vectors and Matrices in NumPy"
+    ]
+  },
+  {
+    "objectID": "numpy/random.html",
+    "href": "numpy/random.html",
+    "title": "NumPy Random Module",
+    "section": "",
+    "text": "The numpy.random module provides functions for working with random numbers.\nCode\nimport matplotlib.pyplot as plt\nimport numpy as np",
+    "crumbs": [
+      "NumPy",
+      "NumPy Random Module"
+    ]
+  },
+  {
+    "objectID": "numpy/random.html#generating-random-data",
+    "href": "numpy/random.html#generating-random-data",
+    "title": "NumPy Random Module",
+    "section": "Generating Random Data",
+    "text": "Generating Random Data\nYou can generate arrays of random numbers from various distributions.\n\n\nCode\n# initialize the random number generator\nrng = np.random.default_rng()\n\n# Generate a 2x3 array of random floats between 0 and 1\nprint(rng.random((2, 3)))\n\n# Generate a 2x3 array of random integers between 1 and 10\nprint(rng.integers(1, 10, size=(2, 3)))",
+    "crumbs": [
+      "NumPy",
+      "NumPy Random Module"
+    ]
+  },
+  {
+    "objectID": "numpy/random.html#shuffling-arrays",
+    "href": "numpy/random.html#shuffling-arrays",
+    "title": "NumPy Random Module",
+    "section": "Shuffling Arrays",
+    "text": "Shuffling Arrays\nYou can randomly shuffle the elements of an array.\n\n\nCode\na = np.arange(10)\nrng.shuffle(a)\nprint(a)\n\n\n\nExample: Simulating Dice Rolls\nWe can simulate rolling a fair six-sided die multiple times.\n\n\nCode\nrolls = rng.integers(1, 7, size=100)\nprint(f'First 10 rolls: {rolls[:10]}')\n\n# Count the occurrences of each outcome\ncounts = np.bincount(rolls)[1:]\nprint(f'Counts for each outcome (1-6): {counts}')\n\n\n\n\nExample: Sampling from a Normal Distribution\nIn many scientific applications, you need to draw samples from a specific statistical distribution, like the normal (Gaussian) distribution.\n\n\nCode\nmu, sigma = 0, 0.1 # mean and standard deviation\nsamples = rng.normal(mu, sigma, 1000)\n\n# Plot a histogram of the samples\nplt.hist(samples, bins=30, density=True)\nplt.title('Samples from a Normal Distribution')\nplt.show()",
+    "crumbs": [
+      "NumPy",
+      "NumPy Random Module"
+    ]
+  },
+  {
+    "objectID": "numpy/random.html#reproducible-randomness-with-seeding",
+    "href": "numpy/random.html#reproducible-randomness-with-seeding",
+    "title": "NumPy Random Module",
+    "section": "Reproducible Randomness with Seeding",
+    "text": "Reproducible Randomness with Seeding\nFor scientific experiments and debugging, it’s crucial to have reproducible results. You can achieve this by setting a “seed” for the random number generator. The same seed will always produce the same sequence of random numbers.\n\n\nCode\nrng = np.random.default_rng(42) # Set the seed\nprint(rng.random(5))\n\nrng = np.random.default_rng(42) # Reset the seed\nprint(rng.random(5))",
+    "crumbs": [
+      "NumPy",
+      "NumPy Random Module"
+    ]
+  },
+  {
+    "objectID": "numpy/exercises/work/work.html",
+    "href": "numpy/exercises/work/work.html",
+    "title": "Looping",
+    "section": "",
+    "text": "We consider the work done on an object moving in a looping (i.e. in a vertical circle). In a uniform gravitational field, the gravitational force always points vertically downwards while the direction of motion changes continuously.\nThe idea of this exercise is to approximate the circle as a polygon, and to calculate the work for each of the edges of the polygon.\n\nDefine work function\nDefine a function that calculates the work for a given force vector F and displacement vector ds.\n\n\nVerify work function\nTo verify if the work function works as expected, we apply it to the following situations where a force of 2 N acts on an object displaced by 3 m: - Both the force and the displacement in the positive \\(x\\) direction. - The force acts in the positive \\(y\\) direction, and the object is displaced in the negative \\(y\\) direction. - The force acts in the positive \\(x\\) direction, and the object is displaced in the positive \\(y\\) direction. - The force acts in the positive \\(x\\) direction, and the object is displaced along the angle bisector between the \\(x\\) and \\(y\\) axis.\n\n\nDefine points on circle\nFor a semiircle (radius 5 m) going from the lowest to the highest point of the looping, choose \\(n\\) points at regular intervals.\n\n\nDefine force and calculate work\nWe assume a force of 750 N (gravitation acting on person with mass 75 kg) pointing downwards (negative \\(y\\) axis).\n\n\nInterpretation"
+  },
+  {
+    "objectID": "numpy/exercises/torque/torque.html",
+    "href": "numpy/exercises/torque/torque.html",
+    "title": "Unbalanced Wheel",
+    "section": "",
+    "text": "For an ideal wheel rotating about its symmetry axis, there is no torque caused by gravitation. The goal of this exercise is to calculate the torque acting on an unbalanced wheel. We assume that a mass \\(m\\) is attached to a point of the otherwise perfectly symmetrical wheel.\n\nDefine torque\n\n\nVerify torque for some special points\nTo verify if the torque is calculated correctly, we verify the results for a few special cases. We assume that the wheel has a radius of 25 cm, and that the weight of the additional mass is 1.5 N (vertically downwards). - Torque if the additional mass is at the top or bottom of the wheel. - Torque if the additional mass is to the left or right of the centre of the wheel.\n\n\nAverage torque\nTo calculate the average torque during half a revolution of the wheel, we divide the rotation into small steps and calculate the torque for each step. We assume that the wheel rotates at a constant angular velocity.\n\nDefine points on wheel\nWe choose \\(n\\) points on the wheel.\n\n\nCalculate torques and average torque"
+  },
+  {
+    "objectID": "numpy/exercises/lightbulb/lightbulb.html",
+    "href": "numpy/exercises/lightbulb/lightbulb.html",
+    "title": "Light Bulb",
+    "section": "",
+    "text": "Using the data we measured in class, investigate the characteristics of a light bulb.\n\nVoltage and current\nDefine arrays for voltage and current. You may want to read the data from a text file.\n\n\nResistance and power\nCalculate arrays for the reistance and power at the measured voltage values. Observe what happens with the first resistance value (division by zero).\n\n\nCharacteristics\nGraph the following relations: - current vs voltage - resistance vs current - power vs voltage"
+  },
+  {
+    "objectID": "numpy/exercises/battery/battery.html",
+    "href": "numpy/exercises/battery/battery.html",
+    "title": "Real Battery",
+    "section": "",
+    "text": "A battery is connected to six different resistors, and the currents and (terminal) voltages are measured. We expect a linear relation for the voltage as a function of the current:\n\\(V = V_0 - r I\\)\nwhere \\(V_0\\) is the source voltage and \\(r\\) the internal resistance of the battery.\n\nMeasured Data\nThe uncertainty for the voltage measurements is 0.01 V, for the current measurements 1 mA.\n\n\nCode\nimport numpy as np\n\n# terminal voltage in V\nvoltage = np.array([4.49, 4.47, 4.45, 4.41, 4.35, 4.28])\ndv = 0.01 # uncertainty in V\n\n# current in mA\ncurrent = np.array([63, 98, 134, 199, 295, 422])\ndi = 1 # uncertainty in mA\n\n\n\n\nResistance\nCalculate the resistance values for the resistors used in the measurements (with measurement errors).\n\n\nGraphical analysis\nGraph the voltage vs current (with error bars) and fit a linear function. Determine the source voltage \\(V_0\\) and the internal resistance \\(r\\) from the fit parameters."
+  },
+  {
+    "objectID": "numpy/broadcasting.html",
+    "href": "numpy/broadcasting.html",
+    "title": "NumPy Broadcasting",
+    "section": "",
+    "text": "Broadcasting is a powerful mechanism that allows NumPy to work with arrays of different shapes when performing arithmetic operations.",
+    "crumbs": [
+      "NumPy",
+      "NumPy Broadcasting"
+    ]
+  },
+  {
+    "objectID": "numpy/broadcasting.html#the-broadcasting-rule",
+    "href": "numpy/broadcasting.html#the-broadcasting-rule",
+    "title": "NumPy Broadcasting",
+    "section": "The Broadcasting Rule",
+    "text": "The Broadcasting Rule\nIn order to broadcast, the size of the trailing axes for both arrays in an operation must either be the same size or one of them must be one.\n\n\nCode\nimport numpy as np\n\n\n\nExample 1: Scalar and an array\n\n\nCode\na = np.array([1.0, 2.0, 3.0])\nb = 2.0\na * b\n\n\n\n\nExample 2: Mismatched dimensions\n\n\nCode\na = np.array([[ 0.0,  0.0,  0.0],\n               [10.0, 10.0, 10.0],\n               [20.0, 20.0, 20.0],\n               [30.0, 30.0, 30.0]])\nb = np.array([1.0, 2.0, 3.0])\na + b",
+    "crumbs": [
+      "NumPy",
+      "NumPy Broadcasting"
+    ]
+  },
+  {
+    "objectID": "numpy/broadcasting.html#reshaping-arrays",
+    "href": "numpy/broadcasting.html#reshaping-arrays",
+    "title": "NumPy Broadcasting",
+    "section": "Reshaping Arrays",
+    "text": "Reshaping Arrays\nThe reshape method allows you to change the shape of an array without changing its data. This is often used to prepare arrays for broadcasting.\n\n\nCode\na = np.arange(6)\nprint(f'Original array: {a}')\nb = a.reshape((2, 3))\nprint(f'Reshaped array:\n{b}')\n\n\n\nExample 3: Normalizing Data\nBroadcasting is very useful for standardizing or normalizing data. For example, you can subtract the mean and divide by the standard deviation for each feature in a dataset.\nIn this example, X is a (5, 3) array representing 5 data points with 3 features each. We calculate the mean (X_mean) and standard deviation (X_std) along axis=0, which gives us the mean and standard deviation for each column (feature). Both X_mean and X_std are 1D arrays of shape (3,).\nWhen we execute X - X_mean, NumPy sees that the shapes (5, 3) and (3,) are not the same. It then applies the broadcasting rule: it “stretches” X_mean across the rows of X, effectively subtracting the column’s mean from every element in that column. The same process happens for the division with X_std. This allows us to normalize the entire dataset in a single, readable line of code.\n\n\nCode\nX = np.random.rand(5, 3) * 10\nprint(f'Original data: {X}')\nX_mean = X.mean(axis=0)\nX_std = X.std(axis=0)\nX_normalized = (X - X_mean) / X_std\nprint(f'Normalized data: {X_normalized}')\n\n\n\n\nExample 4: Creating a Distance Matrix\nYou can use broadcasting to efficiently compute the distance between every pair of points in a dataset.\nHere, we want to compute the Euclidean distance between every pair of points in the points array. A naive approach would use nested loops, which is slow in Python. A broadcasted solution is much faster.\n\nWe start with a points array of shape (4, 2).\nWe use np.newaxis to create two new views of the data: points_row with shape (4, 1, 2) and points_col with shape (1, 4, 2).\nWhen we subtract them (points_row - points_col), NumPy broadcasts the two arrays into a resulting array of shape (4, 4, 2). This new array contains the vector differences between every possible pair of points.\nWe then square the differences, sum along the last axis (axis=2) to get the squared Euclidean distance, and finally take the square root to get the final distance matrix.\n\n\n\nCode\npoints = np.array([[0, 0], [1, 2], [3, 1], [4, 4]])\n\n# Prepare the points for broadcasting\npoints_row = points[:, np.newaxis, : ]\npoints_col = points[np.newaxis, :, : ]\ndistances = np.sqrt(np.sum((points_row - points_col)**2, axis=2))\nprint(f'Distance matrix: {distances}')",
+    "crumbs": [
+      "NumPy",
+      "NumPy Broadcasting"
+    ]
+  },
+  {
+    "objectID": "matplotlib/matplotlib.html",
+    "href": "matplotlib/matplotlib.html",
+    "title": "Matplotlib",
+    "section": "",
+    "text": "There are a variety of Python libraries to visualise data. We are going to have a look at the most popular option matplotlib (matplotlib.org).\n\nImport Libraries\n\n\nCode\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\n\n\nGraph of a function\nIn order to graph a function, we have to define values for the horizontal axis.\n\n\nCode\nx = np.linspace(-2*np.pi, 2*np.pi, 1000) # Generate 1000 points from -2π to 2π\nf = np.cos(x)  # Calculate cos(x) for each x\ng = np.sin(x)  # Calculate sin(x) for each x\n\nfig, ax = plt.subplots(figsize=(8, 6)) # Define figure and axis, set size\nax.plot(x, f, label=r'$f(x) = \\cos(x)$', color='blue') # Plot f(x)\nax.plot(x, g, label=r'$g(x) = \\sin(x)$', color='orange') # Plot g(x)\nax.axhline(0, color='black', lw=0.5, ls='--')  # Horizontal line at y=0\nax.axvline(0, color='black', lw=0.5, ls='--')  # Vertical line at x=0\nax.set_xlabel('x') # Set x-axis label\nax.set_ylabel('$f(x)$, $g(x)$') # Set y-axis label\nax.set_title(r'Graph of $\\cos(x)$ and $\\sin(x)$') # Set title\nax.grid(True) # Show grid\nax.legend() # Show legend\nplt.show()  # Display the plot\n\n\n\n\nGraph data\nData points can be graphed using lists or arrays containing the x and y coordinates.\n\n\nCode\nt = [0.0, 0.5, 1.0, 1.5, 2.0, 2.5]  # Example time points\nx = [1.3, 2.8, 3.4, 4.1, 4.5, 4.7]  # Example position points\n\nfig, ax = plt.subplots(figsize=(8, 6)) # Define figure and axis, set size\n# Scatter plot of measured data\nax.scatter(t, x, label='measured data', color='blue', s=10)\nax.set_xlabel('time (s)')\nax.set_ylabel('position (m)')\nax.grid(True) # Show grid\nplt.show()  # Display the plot\n\n\n\n\nArrays of plots\nSeveral plots can be arranged in a gridlike array. This is especially useful if two plots have the same x or y axis.\n\n\nCode\nt = [0, 1, 2, 3, 4, 5]\nx1 = [1, 2, 5, 10, 17, 26]\nx2 = [10, 9, 6, 1, -6, -15]\n\n# set up figure\n# 2 rows, 1 column, shared x axis\nfig, (ax1, ax2) = plt.subplots(nrows=2, ncols=1, sharex=True)\nplt.suptitle('Title') # title for whole figure\nplt.xlabel('$t$') # label for common x axis\n\n# set up plot 1\nax1.scatter(t, x1)\nax1.set_ylabel(r'$x_1$')\nax1.grid(True)\n\n# set up plot 2\nax2.scatter(t, x2)\nax2.set_ylabel(r'$x_2$')\nax2.grid(True)\n\nplt.show()\n\n\n\n\nError bars\nWhen plotting measured data, it is good practice to add error bars to the data points to indicate the uncertainty of the measured values. This can be done using the plt.errorbar() method.\n\nVisualise data and model\n\n\nCode\nt = [0.0, 0.5, 1.0, 1.5, 2.0, 2.5]  # Example time points\ndt = 0.05  # Example time error (same for all points)\n\nx = [1.3, 2.8, 3.4, 4.1, 4.5, 4.7]  # Example position points\ndx = [0.05, 0.05, 0.10, 0.10, 0.15, 0.15]  # Example position errors\n\nfig, ax = plt.subplots(figsize=(8, 6)) # Define figure and axis, set size\n# Scatter plot with error bars\nax.errorbar(t, x, xerr=dt, yerr=dx, \n            label='measured data', \n            fmt='.', \n            color='blue'\n            )\nax.set_xlabel('time (s)')\nax.set_ylabel('position (m)')\nax.grid(True)\nplt.show()",
+    "crumbs": [
+      "Matplotlib",
+      "Matplotlib"
+    ]
+  },
+  {
+    "objectID": "matplotlib/exercises/acceleration/acceleration.html",
+    "href": "matplotlib/exercises/acceleration/acceleration.html",
+    "title": "Acceleration",
+    "section": "",
+    "text": "For a steel ball rolling down an inclined track, the distance it has travelled and the velocity are measured at different times. Visualise the motion with a distance vs time and a velocity vs time graph.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\ntime = np.array([1.775, 2.007, 2.372, 2.856, 3.416, 3.974]) # time in s\ndistance = np.array([0.20, 0.25, 0.35, 0.50, 0.70, 0.95]) # distance in m\nvelocity = np.array([0.208, 0.238, 0.288, 0.351, 0.421, 0.488]) # velocity in m/s\n\n\n\nDistance vs time\n\n\nVelocity vs time\n\n\nPolynomial fits\nThe data points in the velocity vs time graph seem to lie on a straight line, which can be expected for a constant acceleration. Using the NumPy polynomial package, you can fit a polynomial of degree 2 to the distance data, and a polynomial of degree 1 to the velocity data.\n\n\nCode\nfrom numpy.polynomial import Polynomial\n\nfit_dist = Polynomial.fit(time, distance, 2)\nfit_velo = Polynomial.fit(time, velocity, 1)\n\n\nVerify if the functions fit_dist and fit_velo are in good agreement with the measured data."
+  },
+  {
+    "objectID": "matplotlib/exercises/lightbulb/lightbulb.html",
+    "href": "matplotlib/exercises/lightbulb/lightbulb.html",
+    "title": "Characteristic of a Light Bulb",
+    "section": "",
+    "text": "Plot different characteristic diagrams for a typical light bulb.\n\nData\n\n\nCode\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# voltage in V\nV = np.array([2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24])\ndV = 0.05\n\n# current in mA\nI = np.array([27.7, 41.6, 53.1, 62.6, 71.8, 80.2, \n              87.8, 96.0, 102.0, 108.4, 114.9, 120.9])\ndI = 0.5\n\n\n\n\nResistance\nCalculate the resistance values and their uncertainties.\n\n\nCurrent vs voltage\nGraph the current vs voltage (including error bars).\n\n\nResistance vs currnet\nGraph the resistance vs current (including error bars)."
+  },
+  {
+    "objectID": "numpy/arrays.html",
+    "href": "numpy/arrays.html",
+    "title": "NumPy Arrays",
+    "section": "",
+    "text": "NumPy (numpy.org) is the de facto standard for numerical calculations in Python. It can efficiently perform calculations with large data series, matrices, vectors, etc.\nThis notebook provides an overview of arrays, the fundamental data structure used in NumPy. Arrays are similar to lists in Python. Each value in an array has to be of the same type, usually a numerical type like float or integer. Arrays allow for very fast calculations, even if the number of values becomes very large.",
+    "crumbs": [
+      "NumPy",
+      "NumPy Arrays"
+    ]
+  },
+  {
+    "objectID": "numpy/arrays.html#example-free-fall",
+    "href": "numpy/arrays.html#example-free-fall",
+    "title": "NumPy Arrays",
+    "section": "Example: Free fall",
+    "text": "Example: Free fall\nPerform some calculations for a free-fall motion.\n\n\nCode\ng = 10 # define gravitational acceleration in m/s^2\n\nt = np.arange(0, 1, 0.1) # time array\ns = 0.5 * g * t**2 # calculate distance for free fall\n\nds = np.diff(s) # calculate distance difference between time steps\nprint(f'{ds = }') # as expected, the distance difference is linearly increasing\n\ndds = np.diff(ds) # calculate second difference\nprint(f'{dds = }') # as expected, the second difference is constant (equal to g dt^2)",
+    "crumbs": [
+      "NumPy",
+      "NumPy Arrays"
+    ]
+  },
+  {
+    "objectID": "numpy/arrays.html#example-temperature-data",
+    "href": "numpy/arrays.html#example-temperature-data",
+    "title": "NumPy Arrays",
+    "section": "Example: Temperature data",
+    "text": "Example: Temperature data\nPerform some simple calculations based on temperature data. You may want to compare the data for 2024 with the data for 1924 in the same folder.\n\n\nCode\npath = 'data/zrh_temp_2024.csv' # file containing daily average temperatures for 2024\ntemperature = np.loadtxt(path, skiprows=1) # create array from textfile, skip header\n\n\n\n\nCode\nn = len(temperature) # number of entries\nt_min = np.min(temperature)\nt_max = np.max(temperature)\nt_mean = np.mean(temperature)\nt_std = np.std(temperature)\n\nprint(f'number of data points: {n}')\nprint(f'minimum temperature: {t_min}°C')\nprint(f'maximum temperature: {t_max}°C')\nprint(f'yearly mean temperature: {t_mean:.2f}°C')\nprint(f'standard deviation: {t_std:.2f}°C')",
+    "crumbs": [
+      "NumPy",
+      "NumPy Arrays"
+    ]
+  },
+  {
+    "objectID": "numpy/data_analysis.html",
+    "href": "numpy/data_analysis.html",
+    "title": "Data Analysis with NumPy",
+    "section": "",
+    "text": "Code\nimport numpy as np"
+  },
+  {
+    "objectID": "numpy/data_analysis.html#example-measuring-density",
+    "href": "numpy/data_analysis.html#example-measuring-density",
+    "title": "Data Analysis with NumPy",
+    "section": "Example: Measuring density",
+    "text": "Example: Measuring density\nSix students measure mass and side of the same brass cube. They end up with slightly different values. The measured data is listed below. How can we efficiently calculate the densities resulting from this data?\n\nDefine arrays for measured data\n\n\nCode\nm = np.array([69.3, 69.1, 69.0, 69.0, 69.2, 69.2]) # mass in g\na = np.array([2.05, 2.00, 2.05, 1.95, 2.00, 2.00]) # side in cm\n\n\n\n\nFind some characteristic values\n\n\nCode\nm_max = np.max(m)\nm_min = np.min(m)\nm_mean = np.mean(m)\nprint(f'max: {m_max} g, min: {m_min} g, mean: {m_mean:.2f} g')\n\n\n\n\nCalculate volumes and densities\n\n\nCode\nV = a**3\nrh = m/V\nprint(f'densities: {rh}')\n\n\n\n\nMean value and deviations\n\n\nCode\nrh_mean = np.mean(rh)\nrh_dev_max = np.max(rh)-rh_mean\nrh_dev_min = rh_mean-np.min(rh)\nprint(f'mean density: {rh_mean:.1f} g/cm^3')\nprint(f'deviation max-mean: {rh_dev_max:.1f} g/cm^3')\nprint(f'deviation min-mean: {rh_dev_min:.1f} g/cm^3')\n\n\n\n\nError calculation\nAll students measured the same quantities on the same cube. In this case we make an estimate for the measurement errors for mass and side length based on the deviations between the different students.\n\n\nCode\ndm = 0.2 # error for mass in g\nda = 0.05 # error for side in cm\n\n\nThe error for the density can be found using the “worst case method”.\n\n\nCode\nrh = m_mean/np.mean(a)**3 # mean density (based on mean mass and mean side)\nrh_max = (m_mean+dm)/(np.mean(a)-da)**3 # max density (based on max mass and min side)\ndrh = rh_max - rh # error\n\n\n\n\nCode\nprint(f'density: ({rh:.1f} ± {drh:.1f}) g/cm^3')"
+  },
+  {
+    "objectID": "numpy/data_analysis.html#calculation-with-pint",
+    "href": "numpy/data_analysis.html#calculation-with-pint",
+    "title": "Data Analysis with NumPy",
+    "section": "Calculation with Pint",
+    "text": "Calculation with Pint\nAlternatively, we can use the built-in functionality of Pint to calculate the values, including their errors.\n\n\nCode\nfrom uncertainties import unumpy\n\nfrom pint import UnitRegistry\n\nureg = UnitRegistry()\n\nm = np.array([69.3, 69.1, 69.0, 69.0, 69.2, 69.2]) # mass in g\na = np.array([2.05, 2.00, 2.05, 1.95, 2.00, 2.00]) # side in cm\n\nm = (m * ureg.gram) # convert to Pint quantities\nm = np.array([m_i.plus_minus(0.2 * ureg.gram) for m_i in m]) # add uncertainty\n\na = (a * ureg.centimeter) # convert to Pint quantities\na = np.array([a_i.plus_minus(0.05 * ureg.centimeter) for a_i in a]) # add uncertainty\n\nV_p = a**3 # calculate volume\nrh_p = m/V_p # calculate density\n\nprint(f'density: {rh_p.mean():~P}')\n\n\n\nRemark\nThe uncertainty calculated by Pint takes into account that the uncertainty of the mean value of independent measurements is smaller than the error of a single measurement. According to the rules of error calculation, the uncertainty of the mean is\n\\[\\Delta \\bar{x} = \\frac{\\Delta x}{\\sqrt{N}}\\]\nwhere \\(N\\) is the number of measurements."
+  },
+  {
+    "objectID": "numpy/exercises/decay/decay.html",
+    "href": "numpy/exercises/decay/decay.html",
+    "title": "Exercise: Simulating Radioactive Decay",
+    "section": "",
+    "text": "Radioactive decay is a process where an unstable atomic nucleus loses energy by radiation. This process is fundamentally probabilistic. For a single unstable nucleus, we can only know the probability that it will decay in a given time interval; we can never know for sure when it will decay.\nIn this exercise, we will use numpy.random to simulate the decay of a large sample of radioactive nuclei."
+  },
+  {
+    "objectID": "numpy/exercises/decay/decay.html#decay-law",
+    "href": "numpy/exercises/decay/decay.html#decay-law",
+    "title": "Exercise: Simulating Radioactive Decay",
+    "section": "Decay law",
+    "text": "Decay law\nThe probability \\(p\\) that a single nucleus will decay in a small time interval \\(dt\\) is given by:\n\\[p = \\lambda \\cdot dt\\]\nwhere \\(\\lambda\\) is the decay constant. The number of nuclei \\(N\\) at a time \\(t\\) is described by the equation:\n\\[N(t) = N_0 e^{-\\lambda t}\\]\nwhere \\(N_0\\) is the initial number of nuclei.\n\nSet up the simulation parameters\nDefine the initial number of nuclei \\(N_0\\), the decay constant \\(\\lambda\\), the total simulation time \\(T\\), and the time step \\(dt\\).\n\n\nRun the simulation\nCreate an array to store the number of surviving nuclei at each time step. Then, loop through the time steps and simulate the decay process.\n\n\nPlot the results\nPlot the simulated number of nuclei over time. For comparison, also plot the theoretical decay curve."
+  },
+  {
+    "objectID": "numpy/exercises/power/power.html",
+    "href": "numpy/exercises/power/power.html",
+    "title": "Maximum Power Transfer",
+    "section": "",
+    "text": "Investigate the power transferred from a battery to a load resistor with the battery’s internal resistance taken into account.\n\nTheory\nThe power transferred to the load resistor \\(R\\) is \\[P_R = V_R \\cdot I = V_0 \\cdot \\frac{R}{R+r} \\cdot \\frac{V_0}{R+r} = \\frac{V_0 \\cdot R}{\\left(R+r\\right)^2}\\] where \\(V_0\\) and \\(r\\) are the source voltage and internal resistance of the battery.\n\n\nQualitative behaviour\nThe power transfer for \\(R=0\\) and for \\(R\\to\\infty\\) is 0, as should be clear from the expression above. It follows that there must be a maximum power transfer \\(P_\\textrm{max}\\) for some load resistance \\(R_\\textrm{max}\\).\n\n\nNumerical analysis\nFor a battery with source voltage 12 V and internal resistance 1.7 \\(\\Omega\\), calculate the power for different values of the load resistor between 0 and 25 \\(\\Omega\\). Graph the power as a function of the load resistance.\n\nMaximum power transfer\nFind numerical approximations for \\(P_\\textrm{max}\\) and \\(R_\\textrm{max}\\).\nThe accuracy of the approximation can be improved by increasing the number of calculated points. As it turns out, the maximum power transfer is achieved if the load resistance equals the internal resistance: \\(R=r\\).\n\n\n\nFormal prove\nThe power transfer has an extremal point at \\(R_\\textrm{max}\\) if the derivative with respect to \\(R\\) vanishes at this point: \\[\\frac{\\textrm{d}P_R}{\\textrm{d}R}=0\\] Find the derivative with the help of SymPy and use it to find formal expressions for \\(R_\\textrm{max}\\) and \\(P_\\textrm{max}\\)."
+  },
+  {
+    "objectID": "numpy/exercises/vapour/vapour.html",
+    "href": "numpy/exercises/vapour/vapour.html",
+    "title": "Vapour Pressure and Density",
+    "section": "",
+    "text": "The pressure and density of saturated water vapour as a function of temperature is listed in Formulae, Tables, Concept (p 192).\n\n\nCode\nimport numpy as np\n\n# read tabulated values\n# temperature in °C, pressure in kPa, density in kg/m^3\ntemperature, pressure, density = np.loadtxt('vapour.txt', delimiter=',', skiprows=1, unpack=True)\n\n\n\nInterpolating values\nFind the interpolated value for - the vapour pressure at 115°C. - the vapour saturation density at 37°C. - the temperature for a vapour pressure of 0.8 bar. - the vapour pressure at a saturation density of 250 g/cm^3\n\n\nRelative humidity\nThe relative humidity is the ratio of the current density of water vapour in air to the saturation density at the current temperature. Define a function that calculates the relative humidity for given vapour density and temperature.\nAs an example, calculate the relative humidity in a room with volume 75 m^3 containing 530 g of water vapour at a temperature of 21°C."
+  },
+  {
+    "objectID": "numpy/interpolation.html",
+    "href": "numpy/interpolation.html",
+    "title": "Interpolation",
+    "section": "",
+    "text": "Physical properties may depend on other parameters like pressure or ambient temperature. While some values can be read from tables (e.g. density of water at different temperatures), if a specific parameter value is required, we often have to interpolate between two tabulated values. NumPy offers a simple method for linear interpolation.\n\n\nCode\nimport numpy as np\n\n\n\nInterpolating values\nFor numpy.interp() to work correctly, the x values have to be monotonically increasing.\n\n\nCode\nx = np.array([1, 2, 3, 4, 5]) # array of x values (monotonically increasing)\ny = np.array([2, 5, 6, 5, 3]) # array of y values\n\ntest_values = [0.5, 1.5, 3.2, 5.5] # x values to use for interpolation\n\nnp.interp(test_values, x, y) # return interpolated values at positions 'test_values'\n\n\nAs can be seen above, if an x value is less/greater than the minimum/maximum value of the given data, the return value corresponds to the first/last y value.\n\n\nExample: Density of water\nThe table on page 192 in Formulae, Tables, Concepts lists the density of water at various temperatures. What are the answers to the following questions? - What is the density of water at 125°C? - At what temperature is the density of water 900 kg/m^3? - At what temperature is the density of water 999.5 kg/m^3?\n\nData from table\n\n\nCode\ntemperature = np.array([-10, -5, 0, 3, 4, 5, 10, 15, 20,\n                        25, 30, 40, 50, 60, 70, 80, 90,\n                        100, 150, 200, 250, 300, 350])\n\ndensity = np.array([998.109, 999.255, 999.840, 999.964, 999.972,\n                    999.964, 999.700, 999.101, 998.206, 997.047, \n                    995.650, 992.22, 988.04, 983.20, 977.76, \n                    971.79, 965.30, 958.35, 916.8, 864.7,\n                    799.2, 712.2, 574.3])\n\n\n\n\nDensity at 125°C\n\n\nCode\ntest_temp = 125\ntest_dens = np.interp(test_temp, temperature, density)\nprint(f'density at {test_temp} °C: {test_dens:.1f} kg/m^3')\n\n\n\n\nTemperature for density 900 kg/m^3\nBefore we can use interp(), we have to sort both the temperature and the density array such that the densities are monotonically increasing.\n\n\nCode\nordered = np.argsort(density)\n\nsorted_dens = density[ordered]\nsorted_temp = temperature[ordered]\n\ntest_dens = 900\ntest_temp = np.interp(test_dens, sorted_dens, sorted_temp)\nprint(f'temperature for {test_dens} kg/m^3: {test_temp:.1f} °C')\n\n\n\n\nTemperature for density 999.5 kg/m^3\nBecause of the anomaly of water, there is no one-to-one correspondence between temperature and density around 4 °C. We have to pick the relevant part of the table before the interpolation.\n\n\nCode\ntest_dens = 999.5\ntest_temp1 = np.interp(test_dens, density[:5], temperature[:5]) # only use values up to 4°C\nprint(f'temperature for {test_dens} kg/m^3: {test_temp1:.1f} °C')\n\n\n\n\nCode\n# For the second solution, we need to consider temperatures above 4 °C. \n# The order of the density values has to be reversed.\ntest_temp2 = np.interp(test_dens, density[-1:3:-1], temperature[-1:3:-1])\nprint(f'temperature for {test_dens} kg/m^3: {test_temp2:.1f} °C')\n\n\n\n\nVisualisation\n\n\nCode\nimport matplotlib.pyplot as plt\n\nplt.plot(temperature[:9], density[:9], label='density of water')\nplt.xlabel('Temperature (°C)')\nplt.ylabel('Density ' + r'(kg/m$^3$)')\nplt.hlines(test_dens, -10, 20, 'red', label=r'$p$ = ' + f'{test_dens} ' + r'kg/m$^3$')\nplt.plot([test_temp1, test_temp2], [test_dens, test_dens], 'og')\nplt.legend()\nplt.grid()\nplt.show()",
+    "crumbs": [
+      "NumPy",
+      "Interpolation"
+    ]
+  },
+  {
+    "objectID": "numpy/vectorfields.html",
+    "href": "numpy/vectorfields.html",
+    "title": "Vector Fields",
+    "section": "",
+    "text": "Vector fields are an important concept in physics. Typical examples are the gravitational field, electric and magnetic fields.\nIn a vector field, vectors is attached to each point in space.",
+    "crumbs": [
+      "NumPy",
+      "Vector Fields"
+    ]
+  },
+  {
+    "objectID": "numpy/vectorfields.html#meshgrid",
+    "href": "numpy/vectorfields.html#meshgrid",
+    "title": "Vector Fields",
+    "section": "Meshgrid",
+    "text": "Meshgrid\nA meshgrid defines the points in space where we want to visualize the vectors.\n\n\nCode\n# create 2D meshgrid\nx, y = np.meshgrid(np.linspace(-10, 10, 20), np.linspace(-10, 10, 20))\n\n# x contains the x coordinates of all 11x11 points, y contains the y coordinates",
+    "crumbs": [
+      "NumPy",
+      "Vector Fields"
+    ]
+  },
+  {
+    "objectID": "numpy/vectorfields.html#quiver-plot",
+    "href": "numpy/vectorfields.html#quiver-plot",
+    "title": "Vector Fields",
+    "section": "Quiver Plot",
+    "text": "Quiver Plot\nA quiver plot adds a vector to each point of a meshgrid.\n\n\nCode\n# uniform field in the positive x direction\nu = 1 # x component of vectors\nv = 0 # y component of vectors\n\nplt.quiver(x, y, u, v)\nplt.gca().set_aspect('equal')\nplt.xlabel('x')\nplt.ylabel('y')\nplt.show()\n\n\n\n\nCode\n# circular field\nr = np.sqrt(x**2 + y**2) # distance to origin\n\n# initialize u and v with zeros\nu = np.zeros_like(x, dtype=float)\nv = np.zeros_like(y, dtype=float)\n\n#create a mask for values with r &gt; 2\nmask = r &gt; 2\n\n#calculate vectors for masked points\nnp.divide(y, r**2, out=u, where=mask) # x component of vector; ignore vectors wit r &lt; 3\nnp.divide(-x, r**2, out=v, where=mask) # y component of vector\n\nplt.quiver(x, y, u, v)\nplt.gca().set_aspect('equal')\nplt.xlabel('x')\nplt.ylabel('y')\nplt.show()",
+    "crumbs": [
+      "NumPy",
+      "Vector Fields"
+    ]
+  },
+  {
+    "objectID": "numpy/vectorfields.html#d-vector-fields",
+    "href": "numpy/vectorfields.html#d-vector-fields",
+    "title": "Vector Fields",
+    "section": "3D Vector Fields",
+    "text": "3D Vector Fields\nVector fields in 3D work in the same way, just with an extra dimension.\n\n\nCode\n# define 3D meshgrid\nx, y, z = np.meshgrid(np.linspace(-10, 10, 10), np.linspace(-10, 10, 10), np.linspace(-10, 10, 11))\n\n\n\n\nCode\n# define vectors\nu = x\nv = y\nw = z\n\nax = plt.figure().add_subplot(projection='3d')\n\nax.quiver(x, y, z, u, v, w, length=0.7, normalize=True) # normalize lengths, i.e. only direction relevant\nplt.show()",
+    "crumbs": [
+      "NumPy",
+      "Vector Fields"
+    ]
+  },
+  {
+    "objectID": "pint/exercises/charged_sphere.html",
+    "href": "pint/exercises/charged_sphere.html",
+    "title": "Charged Sphere",
+    "section": "",
+    "text": "Code\nfrom pint import UnitRegistry\nfrom scipy.constants import electron_mass, elementary_charge\n\n\n\n\nCode\nureg = UnitRegistry()\n\nQ = ureg('-73 nC')\ne = elementary_charge * ureg('C')\nme = electron_mass * ureg('kg')\n\nNe = Q/(-e)\ndm = Ne * me\n\nprint(f'number of electrons: {Ne.to_base_units():.2e~P}')\nprint(f'mass transfer: {dm.to_base_units():.2e~P}')"
+  },
+  {
+    "objectID": "pint/exercises/energy/energy.html",
+    "href": "pint/exercises/energy/energy.html",
+    "title": "Electric Energy",
+    "section": "",
+    "text": "Use the Pint library to answer the following questions about the production of electric energy in Switzerland.\n\nYearly energy production\nSwitzerland produces about 75 TWh electric energy per year. Convert this quantity to Joules.\n\n\nAverage power\nCalculate the average electric power produced.\n\n\nAverage current\nAssuming a voltage of 230 V throughout the grid, calculate the average current for all of Switzerland and for each of its 9 million inhabitants."
+  },
+  {
+    "objectID": "pint/pint.html",
+    "href": "pint/pint.html",
+    "title": "Pint: Calculations with units",
+    "section": "",
+    "text": "The library Pint (pint.readthedocs.io) allows for simple calculations with units. It is also a very convenient tool for unit conversions.",
+    "crumbs": [
+      "Pint",
+      "Pint: Calculations with units"
+    ]
+  },
+  {
+    "objectID": "pint/pint.html#examples",
+    "href": "pint/pint.html#examples",
+    "title": "Pint: Calculations with units",
+    "section": "Examples",
+    "text": "Examples\nThe following examples demonstrate how quantities with units can be defined or converted, and how calculated quantities can be formatted.\n\nExample 1: Current\n\n\nCode\nI = ureg('75 mA') # define current in mA\ndt = ureg('4.5 h') # define time interval in h\n\nQ = I * dt # calculate charge\n\n# convert I and dt to basic units before calculating Q\nQ_C = I.to_base_units() * dt.to_base_units()\n\nprint(f'Q = {Q}') # print charge in standard form\nprint(f'Q = {Q:~P.0f}') # print charge nicely formatted with unit symbols\nprint(f'Q = {Q.to('mAh'):~.0f}') # print charge in unit mAh\nprint(f'Q = {Q.to('C'):~P.2e}') # print charge in C\nprint(f'Q = {Q.to('C'):#~P.2f}') # print charge in C using unit prefix\nprint(f'Q = {Q_C:~P.2e} = {Q_C.to('C'):.2e~P}') # print charge (calculated with basic units)\n\n\n\n\nExample 2: Density\n\n\nCode\nrho = ureg.Quantity(7.92, 'g/cm**3') # define density using Quantity\nV = ureg.Quantity(2.5, 'dl') # define volume\n\nm = rho * V # calculate mass\n\nprint(f'{m:.2f~P}') # print result with \"raw\" units\nprint(f'{m.to_base_units():.2f~P}') # print result in base unit\n\n\n\n\nExample 3: Pressure\n\n\nCode\np = 354 * ureg('mbar') # define pressure in mbar\nA = 442 * ureg('cm**2') # define area in cm^2\n\nF = p * A # calculate force\n\nprint(f'{F:.3g~P}') # print result with \"raw\" units (3 significant figures)\nprint(f'{F.to_base_units():~P.3g}') # print result in base units\nprint(f'{F.to('N'):~P.3g}') # print result in N\nprint(f'{F.to('N'):#~P.3g}') # print result in N (with unit prefix)",
+    "crumbs": [
+      "Pint",
+      "Pint: Calculations with units"
+    ]
+  },
+  {
+    "objectID": "pint/pint.html#using-pint-together-with-uncertainties",
+    "href": "pint/pint.html#using-pint-together-with-uncertainties",
+    "title": "Pint: Calculations with units",
+    "section": "Using Pint together with Uncertainties",
+    "text": "Using Pint together with Uncertainties\nThe libraries Pint and Uncertainties (https://uncertainties.readthedocs.io/en/latest/index.html) can be used together to make calculations with physical quantities including their uncertainties. The uncertainty of a calculated quantity is calculated according to the rules of error calculation, and the result is printed in a standard format.",
+    "crumbs": [
+      "Pint",
+      "Pint: Calculations with units"
+    ]
+  },
+  {
+    "objectID": "pint/pint.html#example-density",
+    "href": "pint/pint.html#example-density",
+    "title": "Pint: Calculations with units",
+    "section": "Example: Density",
+    "text": "Example: Density\n\n\nCode\n# Define side and mass of a cube, including uncertainties\na = ureg('1.5 cm').plus_minus(0.05)\nm = ureg('93.3 g').plus_minus(0.1)\n\nprint(f'a = {a:~P}') # print value with uncertainty in standard form\nprint(f'm = {m:~P}')\n\nrho = m / (a**3) # calculate density\n\n# print result with calculated uncertainty\nprint(f'density = {rho.to('kg/m**3'):~P} = {rho.to('g/cm**3'):~P}')",
+    "crumbs": [
+      "Pint",
+      "Pint: Calculations with units"
+    ]
+  },
+  {
+    "objectID": "polars/exercises/binding_energy/process_binding_energy.html",
+    "href": "polars/exercises/binding_energy/process_binding_energy.html",
+    "title": "Computational Tools for Physics",
+    "section": "",
+    "text": "Code\nimport polars as pl\n\n\n\n\nCode\ndef process(f, col_starts, col_names, drop_cols, skip=0):\n    '''\n    Process data from a text file with fixed width columns.\n    @param f: path to document which is processed\n    @param skip: number of rows to skip\n    @param widths: list of column widths\n    @param col_names: list of column names\n    @return: returns a DataFrame containg the processed columns\n    '''\n    \n    raw = pl.read_csv(\n        f,\n        has_header = False,\n        skip_lines = skip,\n        new_columns = ['full_str']\n    )\n    \n    max_len = (raw\n        .with_columns(pl.col('full_str').str.len_chars().alias('len'))\n        .select(pl.max('len'))\n        .item(0, 0)\n              )\n    \n    col_starts.append(max_len)\n\n    column_names = col_names\n\n    return raw.with_columns(\n        [\n            pl.col('full_str').str.slice(col_starts[i]-1, col_starts[i+1]-col_starts[i]).str.strip_chars().alias(col)\n            for i, col in enumerate(column_names)\n        ]\n    ).drop('full_str').drop(drop_cols)\n\n\n\n\nCode\ndef fix_columns(df, col_names):\n    df = (df.select(pl.all().str.replace(' ', ''))\n          .select(pl.all().str.replace('#', ''))\n         )\n\n    return df\n\n\n\n\nCode\npath = 'https://amdc.impcas.ac.cn/masstables/Ame2020/mass_1.mas20'\nstarts = [1, 3, 6, 11, 16, 21, 24, 29, 43, 56, 69, 80, 83, 96, 107, 125]\ncol_names = ['1', 'N-Z', 'N', 'Z', 'Mass Number', 'Atomic Symbol', 'Odd', 'Mass Excess', 'ME error', \n             'Binding Energy per Nucleon', 'BE error', 'Beta Type', 'Beta-Decay Energy', 'BD error', \n             'Atomic Mass', 'AM error']\ndrop_cols = ['1', 'N-Z']\nskip = 36\n\ndf = process(path, starts, col_names, drop_cols, skip)\n\n\n\n\nCode\ncol_names = df.select(pl.exclude(['N', 'Z', 'Atomic Symbol', 'Odd'])).columns\n\ndf = fix_columns(df, col_names)\n\n\n\n\nCode\ncol_types = {'N': pl.Int16, 'Z': pl.Int16, 'Mass Number': pl.Int16, 'Atomic Symbol': pl.String, 'Odd': pl.String, \n             'Mass Excess': pl.Float64, 'ME error': pl.Float64, 'Binding Energy per Nucleon': pl.Float64, 'BE error': pl.Float64,\n             'Beta Type': pl.String, 'Beta-Decay Energy': pl.Float64, 'BD error': pl.Float64, \n             'Atomic Mass': pl.Float64, 'AM error': pl.Float64}\n\nfinal = df.cast(col_types, strict=False)\n\nfinal.write_parquet('binding_energy.parquet')"
+  },
+  {
+    "objectID": "polars/exercises/hr/hr.html",
+    "href": "polars/exercises/hr/hr.html",
+    "title": "Astronomical Data",
+    "section": "",
+    "text": "There are billions of stars in our universe. Especially over the last few decades a lot of data about their properties has been collected with telescopes like the Hubble or the James Webb Space Telescope. Catalogs like Hipparcos or GAIA compile large amounts of data. Analysing millions or billions of datasets can be a challenging task, but libraries like Polars make the process quite efficient.\n\nImport Data\nThe file hygdata_v41.csv containts data about almost 120’000 stars from three well-known catalogs (Hipparcos, Yale Bright Stars, Gliese), hence the name HYG.\nImport the data into a polars dataframe and find out about the meaning of the different columns (see https://github.com/astronexus/HYG-Database/tree/main/hyg).\nFind data for some well-known stars, e.g. the distance to Sirius or the radial velocity of Vega.\n\n\nCode\nimport polars as pl\n\npath = 'hygdata_v41.csv'\n\ndf = pl.read_csv(path)\n\n\n\n\nHertzsprung-Russell\nStars can be categorized based on their surface temperature (related to the colour of a star) and their luminosity (related to the brightness).\nIn a Hertzsprung-Russell the luminosity (usually in a logarithmic scale in units of magnitudes) is graphed vs. the surface temperature or the color index. As a convention, the color index decreases from left to right, which corresponds to a temperature increase.\nUsing the collumns ‘ci’ (color index) and ‘absmag’ (absolute magnitude), create a Hertzsprung-Russell diagram for all stars in the dataframe. Mark the position of our Sun (Sol) in the diagram.\nIn order to convert the color index to the perceived colour, the steps described in https://stackoverflow.com/questions/21977786/star-b-v-color-index-to-apparent-rgb-color can be followed. Create a version of the Hertzsprung-Russell diagram with the temperature as the horizontal axis and with data points plotted with the colour of the corresponding star.\nThe final version should look similar to this: \n\n\nCode\nimport numpy as np\n\n\ndef bv2T(bv):\n    \"\"\"\n    Convert B-V color index to temperature in Kelvin.\n\n    Parameters\n    ----------\n    bv (float): B-V color index.\n\n    Returns\n    -------\n    float: Temperature in Kelvin.\n\n    \"\"\"\n\ndef T2rgb(T):\n    convert = pl.read_csv('kelvin2rgb_10deg.csv')\n    alpha = 0.5\n\n    temp = np.array(convert.get_column('T'))\n    red = np.array(convert.get_column('r'))\n    green = np.array(convert.get_column('g'))\n    blue = np.array(convert.get_column('b'))\n\n    r = np.interp(T, temp, red)\n    g = np.interp(T, temp, green)\n    b = np.interp(T, temp, blue)\n\n    colors = [(a, b, c, alpha) for a, b, c in zip(r, g, b)]\n\n    return colors"
+  },
+  {
+    "objectID": "polars/exercises/isotopes/process_isotope_data.html",
+    "href": "polars/exercises/isotopes/process_isotope_data.html",
+    "title": "Computational Tools for Physics",
+    "section": "",
+    "text": "Code\nimport polars as pl\n\n\n\n\nCode\ndata_dict = {\n    'Atomic Number': [],\n    'Atomic Symbol': [],\n    'Mass Number': [],\n    'Relative Atomic Mass': [],\n    'Isotopic Composition': [],\n    'Standard Atomic Weight': [],\n    'Notes': []\n}\n\nschema_dict = {\n    'Atomic Number': pl.UInt8,\n    'Atomic Symbol': pl.String,\n    'Mass Number': pl.UInt16,\n    'Relative Atomic Mass': pl.Float32,\n    'Isotopic Composition': pl.Float32,\n    'Standard Atomic Weight': pl.String,\n    'Notes': pl.String\n}\n\n\nwith open('isotopes.csv') as f:\n    while (line:=f.readline()):\n        if (line != '\\n') and ('NIST' not in line):\n            k, v = line.split(' = ')\n            data_dict[k].append(v.strip())\n\n\n\n\nCode\ndf_import = pl.DataFrame(data_dict)\n\ndf = df_import.with_columns(\n    pl.col('Relative Atomic Mass').str.split(by='(').list.first(),\n    pl.col('Isotopic Composition').str.split(by='(').list.first()\n).cast(schema_dict, strict=False).drop(['Standard Atomic Weight', 'Notes'])\n\n\n\n\nCode\ndf.write_parquet('isotopes.parquet')"
+  },
+  {
+    "objectID": "polars/exercises/temperature/temperature.html",
+    "href": "polars/exercises/temperature/temperature.html",
+    "title": "Mean Temperature in Zurich",
+    "section": "",
+    "text": "The weather station in Zurich Fluntern has been recording temperature data since 1864."
+  },
+  {
+    "objectID": "polars/exercises/temperature/temperature.html#rainfall-in-zurich",
+    "href": "polars/exercises/temperature/temperature.html#rainfall-in-zurich",
+    "title": "Mean Temperature in Zurich",
+    "section": "Rainfall in Zurich",
+    "text": "Rainfall in Zurich\nAdditionally we can analyse if precipitation (column ‘rre150d0’) has also changed over the years."
+  },
+  {
+    "objectID": "scipy/constants.html",
+    "href": "scipy/constants.html",
+    "title": "Physical Constants",
+    "section": "",
+    "text": "The Python library SciPy (scipy.org) contains a collection of important physical constants and units.\n\nImport constants\n\n\nCode\nfrom scipy import constants\n\n\n\n\nShow list of constants\nA list of the constants and units in scipy.constants can be found on https://docs.scipy.org/doc/scipy/reference/constants.html.\n\n\nCode\nfor c in dir(constants):\n    print(c)\n\n\n\n\nUsing constants\n\n\nCode\nprint(f'elementary charge: e = {constants.elementary_charge} C')\nprint(f'electron mass: me = {constants.electron_mass} kg')\n\n\n\n\nCode\n# convert proton mass to MeV\nmp = constants.m_p # proton mass in kg\nc = constants.speed_of_light # speed of light\nMeV = 1e6 * constants.electron_volt # conversion factor J -&gt; MeV\n\nmp_MeV = mp * c**2 / MeV # convert from kg to MeV/c^2\n\nprint(f'proton mass: mp = {mp_MeV} MeV/c^2')\n\n\n\n\nAdditional Constants\nThe dictionary physical_constants contains the recommended values (including uncertainties) of a large number of physical constants, as listed in the CODATA database. The return value is a dictionary containing the value, unit, and uncertainty.\n\n\nCode\nm_al, unit, uncertainty = constants.physical_constants['alpha particle mass']\nprint(f'mass of alpha particle: {m_al} {unit} (± {uncertainty} {unit})')\n\n\n\n\nCode\n# The speed of light is an exact value in the SI system, so it has no uncertainty.\nc, unit, uncertainty = constants.physical_constants['speed of light in vacuum']\nprint(f'speed of light: {c:.0f} {unit} (± {uncertainty} {unit})')",
+    "crumbs": [
+      "SciPy",
+      "Physical Constants"
+    ]
+  },
+  {
+    "objectID": "scipy/exercises/battery_discharge/battery_discharge.html",
+    "href": "scipy/exercises/battery_discharge/battery_discharge.html",
+    "title": "Battery Discharge",
+    "section": "",
+    "text": "To investigate how a battery is discharged, it is connected to a circuit that drwas a constant current of 0.55 A. The voltage, current and “State of Charge” (percentage of remaining battery capacity) are measured over the discharge time.\nWe are going to calculate the energy delivered by the battery during a discharge cycle.\n\n\nCode\nimport numpy as np\n\npath = 'battery.csv'\n\n# read battery data\n# t: time (s)\n# V: voltage (V)\n# I: current (A)\n# SoC: Stage of Charge (%)\nt, V, I, SOC = np.loadtxt(path, skiprows=1, delimiter=',', unpack=True)\n\n\n\nPower\nDefine an array with the power delivered by the battery, and the power as a function of time.\n\n\nMethod 1: Numerical integration using step function\nWhen we assume the power to be constant during the time interval \\(\\Delta t\\) between two data points, the integral can be approximated as \\[E = \\sum_{i=1}^N P_i \\cdot \\Delta t = \\Delta t \\cdot \\sum_{i=1}^N P_i \\]\n\n\nCode\ndt = t[1] - t[0] # time interval between two data points\n\nenergy1 = np.sum(P) * dt\n\nprint(f'The energy delivered by the battery is {energy1/1000:.2f} kJ')\n\n\n\n\nMethod 2: Numerical integration using interpolated function\nThe energy corresponds to the area under the graph in the power vs time diagram. We can use the method scipy.quad() to calculate the integral, but we have to interpolate the data points with numpy.interp().\nThe second method is more accurate since it takes the decrease of power over the time interval \\(\\Delta t\\) into account. The first method overestimates the energy."
+  },
+  {
+    "objectID": "scipy/exercises/boyle-mariotte/boyle-mariotte.html",
+    "href": "scipy/exercises/boyle-mariotte/boyle-mariotte.html",
+    "title": "Boyle-Mariotte",
+    "section": "",
+    "text": "Air is enclosed in a cylinder whose circular base has a radius of 2.5 cm. The length of the air volume can be adjusted with a movable piston. The pressure in the cylinder is measured for different positions of the piston.\n\n\nCode\nimport numpy as np\n\n# length of air volume in cm\nL = np.array([20.0, 19.0, 18.0, 17.0, 16.0, 15.0, 14.0, 13.0, 12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.5, 6.0, 5.5, 5.0])\n\n# pressure in bar\np = np.array([1.00, 1.05, 1.10, 1.20, 1.25, 1.35, 1.45, 1.55, 1.70, 1.80, 2.00, 2.20, 2.45, 2.80, 3.00, 3.20, 3.50, 3.80])\n\n\n\nPressure vs volume\nUsing the measured data, calculate the air volumes and graph pressure vs volume.\n\n\nVerify Boyle-Mariotte\nThe theory (Boyle-Mariotte law) predicts an inverse proportionality between pressure and volume:\n\\[p = \\frac{n R T}{V}\\]\nVisually verify the model with an appropriate fit function.\nThe uncertainties for the measurements are 0.05 cm for the radius, 0.05 cm for the lengths, and 0.05 bar for the pressure. Calculate the uncertainties for the volumes and add error bars to the graph.\nMake a residual plot to inspect the quality of the fit function.\n\n\nAlternative approach\nThe analysis can also be done by graphing the pressure vs. the reciprocal value of the volume. Verify if the fit parameters for the two methods are compatible.\nNot so surprisingly, the two methods yield the same result for the fit parameter."
+  },
+  {
+    "objectID": "scipy/exercises/decay/decay.html",
+    "href": "scipy/exercises/decay/decay.html",
+    "title": "Decay Numbers",
+    "section": "",
+    "text": "In order to investigate the random fluctuation of decay numbers for a radioactive source, the events measured within 5 s are recorded 2500 times. The data is stored in a csv file (counts.csv).\n\n\nCode\nimport numpy as np\n\ncounts = np.genfromtxt('counts.csv', delimiter='c')\n\n\nCalculate the mean value and the standard deviation.\nCalculate the fraction of measurements where the number of counts is within one standard deviation from the mean. What is the fraction within two or three standard deviations?\nMake a histogram for the number of counts.\nCompare the measured distribution to a normal distribution: \\(f(c) = f_0 e^{-\\frac{(c-c_0)^2}{2\\sigma^2}}\\)\nAre the fit parameters as expected?"
+  },
+  {
+    "objectID": "scipy/exercises/lens/lens.html",
+    "href": "scipy/exercises/lens/lens.html",
+    "title": "Thin Lens Equation",
+    "section": "",
+    "text": "The following data for a lens was measured by two students. The first array contains the object distance (i.e. the distance from the object to the lens), the second array the corresponding image distance (i.e. the distance from the lens where a sharp image can be observed). Assuming a thin lens, we know that the relation between object and image distance is given by the thin lens equation:\n\\(\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}\\)\nwhere \\(f\\) is the focal length, \\(d_o\\) the object distance, and \\(d_i\\) the image distance.\n\n\nCode\nimport numpy as np\n\n# object distance in cm\no = np.array([38, 30, 25, 50, 70, 60, 27, 32, 35, 45, 55, 65])\ndo = 0.5 # measurement error in cm\n\n# image distance in cm\ni = np.array([24, 29, 36, 21, 19, 20, 33, 27, 26, 22, 20, 19])\ndi = 0.5 # measurement error in cm\n\n\n\nMethod 1\nGraph the reciprocal value of the image distance vs the reciprocal value of the object distance. This should result in a linear function with slope -1 and axis intercept \\(1/f\\). Investigate the quality of the linear fit and determine the focal length.\n\n\nMethod 2\nSolving the lens equation for the image distance yields\n\\(d_i = \\left(\\frac{1}{f} - \\frac{1}{d_o}\\right)^{-1}\\)\nInvestigate this relation with an appropriate fit function."
+  },
+  {
+    "objectID": "scipy/exercises/linreg/linreg.html",
+    "href": "scipy/exercises/linreg/linreg.html",
+    "title": "Linear Fit with Trial & Error",
+    "section": "",
+    "text": "In this exercise we simulate a simple linear fit algorithm. The idea is to vary the slope and find the value that corresponds to the least square.\nFirst, we create some fictional data. The y-values linearly depend on x, but with a random perturbation.\n\n\nCode\nimport numpy as np\n\nn_points = 10 # Number of data points\nslope = 2 # Slope of the linear function\nnoise = 1 # Noise amplitude\n\nrng = np.random.default_rng() # Random number generator\nx = np.arange(n_points) # Generate x values\ny = slope * x + noise * rng.random(n_points) # Generate linear data with noise\n\n\nMake a graph for y vs. x.\nNow we assume that we do not know the “exact” slope, but we can estimate it to be between 1 and 2.\nCompare the result to the values obtained with a built-in fit function."
+  },
+  {
+    "objectID": "scipy/exercises/radon/radon.html",
+    "href": "scipy/exercises/radon/radon.html",
+    "title": "Radon Decay",
+    "section": "",
+    "text": "The decay of Radon 220 is investigated with an ionisation chamber. The chamber delivers an electrical signal which is proportional to the activity of the radioactive gas in the detector. The time and voltage data for a measurement over 5 minutes can be read from a csv file.\n\n\nCode\nimport numpy as np\n\ndecay = np.genfromtxt('radon.csv', delimiter=',')\ntime = decay[0]\nvoltage = decay[1]\n\n\nGraph the voltage vs time diagram.\nThe theory predicts an exponential decay. Visually verify the model with an exponential fit function. Include a term for a possible (constant) voltage offset.\nDetermine the error of the time constant in two different ways: Using the covariance matrix for the fit function, and by determining the deviation for fits to different time intervals."
+  },
+  {
+    "objectID": "scipy/exercises/snell/snell.html",
+    "href": "scipy/exercises/snell/snell.html",
+    "title": "Snell’s law",
+    "section": "",
+    "text": "The following data was measured by two students for the refraction of light going from air to acrylic glass. The first array contains the angles for the incoming lightrays, the second array the corresponding angles for the refracted rays. All angles were measured in degrees.\n\n\nCode\nimport numpy as np\n\nal = np.arange(6, 90, 6)\nbe = np.array([3, 8, 11, 16, 20, 23, 26.5, 30, 33, 35.5, 38, 40, 41, 42])\n\n\n\nMethod 1\nConvert the angles to radians and add arrays for the sine of the angles. Assuming a measurement error of 0.5°, determine the errors of the sine values.\nGraph the sine of the incoming angle vs. the sine of the refractive angle (with error bars). Fit a straight line through the origin to the data and determine its slope (including statistical error), which corresponds to the refractive index.\n\n\nMethod 2\nAlternatively, the value for the refractive index can be determined by graphing the angles directly and then fitting a more complicated function:\n\\(\\sin(\\alpha) = n \\sin(\\beta) \\Longrightarrow \\alpha = \\arcsin\\left(n \\sin(\\beta)\\right)\\)\n\n\nResidual Plots\nCreate the residual plots for both curve fits."
+  },
+  {
+    "objectID": "scipy/integration.html",
+    "href": "scipy/integration.html",
+    "title": "Numerical Integration",
+    "section": "",
+    "text": "Expressing the integral in terms of basic functions is not possible for arbitrary integrands. NumPy and SciPy provide fast and reliable methods to calculate definite integrals of arbitrary functions numerically.\nCode\nimport sympy as sp\n\nimport numpy as np\nfrom scipy.differentiate import derivative\nfrom scipy.integrate import quad\nThe quad function takes the function and the lower and upper boundary as parameters.\nCode\ndef f(x):\n    '''define function'''\n\n    return np.exp(-x**2)\n\n\nintegral, error = quad(f, -1, 1) # calculate the integral and its function\n\nprint(f'integral: {integral}')",
+    "crumbs": [
+      "SciPy",
+      "Numerical Integration"
+    ]
+  },
+  {
+    "objectID": "scipy/integration.html#symbolic-vs-numerical-integration",
+    "href": "scipy/integration.html#symbolic-vs-numerical-integration",
+    "title": "Numerical Integration",
+    "section": "Symbolic vs numerical integration",
+    "text": "Symbolic vs numerical integration\nSymPy allows to find expressions for a large number of integrals, and it can also evaluate integrals numerically.\n\n\nCode\n\nx = sp.Symbol('x') # define x as a symbolic variable\nisp = sp.integrate(sp.exp(-x**2), (x, -1, 1)) # find the integral analytically\nispN = sp.N(isp, 20) # numerically evaluate the value (20 digits)\n\nprint(f'value found with SymPy: {ispN}')\nprint('This is the value of the following expression (erf is the error function):')\ndisplay(isp)\n\n\nA speed comparison shows that SciPy is much more efficient when it comes to the numerical calculation.\n\n\nCode\n%%timeit\nquad(f, -1, 1) # time the numerical integration with SciPy\n\n\n\n\nCode\n%%timeit\nsp.integrate(sp.exp(-x**2), (x, -1, 1)) # time the symbolic integration with SymPy\n\n\nFor this example, SciPy is more than 1000 times faster than SymPy! On the other hand, since the integral can be expressed in terms of a known function, it is possible to just determine the (indefinite) integral once and then calculate the definite integral using this function.\n\n\nCode\n%%timeit\nsol = sp.integrate(sp.exp(-x**2), x) # indefinite integral\n\n\n\n\nCode\nsol = sp.integrate(sp.exp(-x**2), x) # indefinite integral\n\n\n\n\nCode\n%%timeit\nsp.N(sol.subs({x: 1}) - sol.subs({x: -1})) # definite integral using the indefinite integral",
+    "crumbs": [
+      "SciPy",
+      "Numerical Integration"
+    ]
+  },
+  {
+    "objectID": "sympy/equations.html",
+    "href": "sympy/equations.html",
+    "title": "Solving Equations with SymPy",
+    "section": "",
+    "text": "SymPy can be used to find formal solutions to a large number of equations or systems of equations.",
+    "crumbs": [
+      "SymPy",
+      "Solving Equations with SymPy"
+    ]
+  },
+  {
+    "objectID": "sympy/equations.html#solve-with-expressions",
+    "href": "sympy/equations.html#solve-with-expressions",
+    "title": "Solving Equations with SymPy",
+    "section": "Solve() with expressions",
+    "text": "Solve() with expressions\nBy default, expressions are assumed to be equal to zero. An equation like \\(f(x) = g(x)\\) can be turned into an expression \\(f(x) - g(x)\\).\n\n\nCode\nimport sympy as sp\n\nx = sp.symbols('x')\n\n# solve the equation 2x = 3 for x\nexp1 = 2 * x - 3\nsol1 = sp.solve(exp1, x)\n# solve() returns a list of solutions, even if there is only one solution\ndisplay(sol1[0]) # display the first (in this case only) solution\n\n\n\n\nCode\n# solve the quadratic equation ax^2 + bx + c = 0 for x\na, b, c = sp.symbols('a b c')\nexp2 = a * x**2 + b * x + c\nsol2 = sp.solve(exp2, x)\n# display all solutions\nfor sol in sol2:\n    display(sol)\n\n# apply general solution to specific values of a, b, c\nvals = {a: 1, b: -3, c: 2}\nsol2_vals = [sol.subs(vals) for sol in sol2]\n# display the specific solutions\nfor sol in sol2_vals:\n    display(sol)\n\n\n\n\nCode\n\n# solve the equation sin(x) = cos(2x) for x\nexp3 = sp.sin(x) - sp.cos(2*x)\n\n# solve() ignores the periodicity of trigonometric functions\n# and returns a list of solutions, even if there are infinitely many\n# solutions (e.g., for sin(x) = 0, the solutions are x = n*pi for n in Z)\nsol3a = sp.solve(exp3, x)\nfor sol in sol3a:\n    display(sol)\n\n# solveset() can be used to find all solutions in a given domain\nsol3b = sp.solveset(exp3, x) # solve the equation sin(x) = cos(x) for x using solveset\ndisplay(sol3b)\n\n\n\n\nCode\nz = sp.Symbol('z')\nx = sp.Symbol('x', real=True)\n\n# solve the equation z^3 + 1 = 0 for z, where z can be comples\nexp4a = z**3 + 1\nsol4a = sp.solve(exp4a, z)\nprint(\"Solutions for z^3 + 1 = 0:\")\nfor sol in sol4a:\n    display(sol)\n\n#solve the equation x^3 + 1 = 0 for x, where x is real\nexp4b = x**3 + 1\nsol4b = sp.solve(exp4b, x)\nprint(\"Solutions for x^3 + 1 = 0:\")\nfor sol in sol4b:\n    display(sol)",
+    "crumbs": [
+      "SymPy",
+      "Solving Equations with SymPy"
+    ]
+  },
+  {
+    "objectID": "sympy/equations.html#equations",
+    "href": "sympy/equations.html#equations",
+    "title": "Solving Equations with SymPy",
+    "section": "Equations",
+    "text": "Equations\nEquations can also be defined using the method Eq() with the left and right hand sides of the equation as arguments.\n\n\nCode\nx, a, b = sp.symbols('x a b')\n# define equation e^(2x) = 3x + 2\neq1 = sp.Eq(sp.exp(a*x), b)\ndisplay(sp.solve(eq1, x)[0])\n\n\n\nSystems of equations\nFor systems of equations, both the equations and the variables for which the system should be solved are passed to the solve() method as lists.\n\n\nCode\n# solve a system of two linear equations\nx, y = sp.symbols('x y')\n# define system of equations\neq1 = sp.Eq(x + 2*y, 2)\neq2 = sp.Eq(x - y, 4)\n# solve system of equations\nsol_sys = sp.solve([eq1, eq2], [x, y])\ndisplay(sol_sys)\n\n\n\n\nCode\n# solve a system of two linear equations with parameters\nx, y, a, b = sp.symbols('x y a b')\n# define system of equations\neq1 = sp.Eq(x + 2*y, a)\neq2 = sp.Eq(2*x - y, b)\n# solve system of equations\nsol_sys2 = sp.solve([eq1, eq2], [x, y])\ndisplay(sol_sys2)\n\n\n\n\nCode\n# solve a system of two nonlinear equations\nx, y = sp.symbols('x y')\n# define system of equations\neq1 = sp.Eq(x**2 + y**2, 13)\neq2 = sp.Eq(x**3 - y, 5)\n# solve system of equations\nsol_sys_nonlinear = sp.solve([eq1, eq2], [x, y], dict=True)\ndisplay(sol_sys_nonlinear)\n\n\n\n\nCode\n# some systems cannot be solved symbolically, but only numerically\n\nx, y = sp.symbols('x y')\n# define system of equations\neq1 = sp.Eq(sp.sin(2*x), -y**2)\neq2 = sp.Eq(sp.cos(x**2), y)\n\n# try to solve the system symbolically\ntry:\n    sol_sys_nonlinear_symbolic = sp.solve([eq1, eq2], [x, y])\n    display(sol_sys_nonlinear_symbolic)\nexcept NotImplementedError as e:\n    print(\"Symbolic solution failed:\", e)\n\n# solve the system numerically with initial guesses for x and y\nsol_sys_nonlinear_numeric = sp.nsolve([eq1, eq2], [x, y], [-1, 1])\ndisplay(sol_sys_nonlinear_numeric)",
+    "crumbs": [
+      "SymPy",
+      "Solving Equations with SymPy"
+    ]
+  },
+  {
+    "objectID": "sympy/exercises/resistor/resistor.html",
+    "href": "sympy/exercises/resistor/resistor.html",
+    "title": "Resistor",
+    "section": "",
+    "text": "A resistor is rated as 1.5 kOhm and 0.5 W.\n\nMaximum voltage and current\nFind formal expressions for the voltage and current as functions of the resistance and the power dissipated in the resistor.\nCalculate the maximum values for voltage and current such that the power rating is not exceeded."
+  }
+]
