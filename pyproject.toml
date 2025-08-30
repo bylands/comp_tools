@@ -11,6 +11,7 @@ dependencies = [
     "marimo>=0.14.10",
     "matplotlib>=3.10.3",
     "numpy>=2.2.6",
+    "papermill>=2.6.0",
     "pint>=0.24.4",
     "polars>=1.30.0",
     "quarto-cli>=1.7.33",

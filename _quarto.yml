@@ -3,7 +3,7 @@ project:
   output-dir: docs
   render:
   - "*.ipynb"
-  - "!exercises/"
+  - "!utility/"
 
 website: 
   title: "Computational Tools for Physics"
@@ -39,11 +39,14 @@ website:
     - section: "Polars"
       contents:
         - "polars/intro_polars.ipynb"
+    - section: "Exercises"
+      contents:
+        - "numpy/exercises/*.ipynb"
 
 format:
   html:
     theme: cosmo
     toc: true
     toc-depth: 4
-    code-fold: false
+    code-fold: show
     css: styles.css
