@@ -457,6 +457,11 @@ dependencies = [
     { name = "uncertainties" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "ipykernel" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "altair", specifier = ">=5.5.0" },
@@ -473,6 +478,9 @@ requires-dist = [
     { name = "sympy", specifier = ">=1.14.0" },
     { name = "uncertainties", specifier = ">=3.2.3" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "ipykernel", specifier = ">=6.30.1" }]
 
 [[package]]
 name = "debugpy"
