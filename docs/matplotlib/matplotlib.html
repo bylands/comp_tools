@@ -360,7 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>There are a variety of Python libraries to visualise data. We are going to have a look at the most popular option <em>matplotlib</em> (<a href="https://matplotlib.org/">matplotlib.org</a>).</p>
 <section id="import-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="import-libraries">Import Libraries</h3>
-<div id="d43296ab-1375-48ee-a2d4-7fa69f4ab8f0" class="cell">
+<div id="d43296ab-1375-48ee-a2d4-7fa69f4ab8f0" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -371,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="graph-of-a-function" class="level3">
 <h3 class="anchored" data-anchor-id="graph-of-a-function">Graph of a function</h3>
 <p>In order to graph a function, we have to define values for the horizontal axis.</p>
-<div id="1352184e-7357-442d-b648-9de0c89b35bf" class="cell">
+<div id="1352184e-7357-442d-b648-9de0c89b35bf" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">1000</span>) <span class="co"># Generate 1000 points from -2π to 2π</span></span>
@@ -390,12 +390,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>ax.legend() <span class="co"># Show legend</span></span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.show()  <span class="co"># Display the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="matplotlib_files/figure-html/cell-3-output-1.png" width="685" height="524" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="graph-data" class="level3">
 <h3 class="anchored" data-anchor-id="graph-data">Graph data</h3>
 <p>Data points can be graphed using lists or arrays containing the x and y coordinates.</p>
-<div id="c494e81c-3802-45c9-aecc-fac58f91207b" class="cell">
+<div id="c494e81c-3802-45c9-aecc-fac58f91207b" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">0.5</span>, <span class="fl">1.0</span>, <span class="fl">1.5</span>, <span class="fl">2.0</span>, <span class="fl">2.5</span>]  <span class="co"># Example time points</span></span>
@@ -409,12 +416,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>) <span class="co"># Show grid</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.show()  <span class="co"># Display the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="matplotlib_files/figure-html/cell-4-output-1.png" width="663" height="503" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="arrays-of-plots" class="level3">
 <h3 class="anchored" data-anchor-id="arrays-of-plots">Arrays of plots</h3>
 <p>Several plots can be arranged in a gridlike array. This is especially useful if two plots have the same x or y axis.</p>
-<div id="47a6e5c3" class="cell">
+<div id="47a6e5c3" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
@@ -439,6 +453,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="matplotlib_files/figure-html/cell-5-output-1.png" width="596" height="477" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="error-bars" class="level3">
@@ -446,7 +467,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>When plotting measured data, it is good practice to add error bars to the data points to indicate the uncertainty of the measured values. This can be done using the <em>plt.errorbar()</em> method.</p>
 <section id="visualise-data-and-model" class="level4">
 <h4 class="anchored" data-anchor-id="visualise-data-and-model">Visualise data and model</h4>
-<div id="7ea8ab24-12fb-4e8b-b8c1-9b1a6d77df6c" class="cell">
+<div id="7ea8ab24-12fb-4e8b-b8c1-9b1a6d77df6c" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">0.5</span>, <span class="fl">1.0</span>, <span class="fl">1.5</span>, <span class="fl">2.0</span>, <span class="fl">2.5</span>]  <span class="co"># Example time points</span></span>
@@ -467,6 +488,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="matplotlib_files/figure-html/cell-6-output-1.png" width="663" height="505" class="figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 
 

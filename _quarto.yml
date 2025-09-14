@@ -4,6 +4,7 @@ project:
   render:
   - "*.ipynb"
   - "!utility/"
+  - "!process_*"
 
 website: 
   title: "Computational Tools for Physics"
@@ -40,7 +41,7 @@ website:
       contents:
         - "polars/intro_polars.ipynb"
     - section: "Exercises"
-      contents:
+      contents: 
         - "numpy/exercises/*.ipynb"
 
 format:

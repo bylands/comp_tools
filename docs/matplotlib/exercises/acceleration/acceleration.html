@@ -355,7 +355,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>For a steel ball rolling down an inclined track, the distance it has travelled and the velocity are measured at different times. Visualise the motion with a distance vs time and a velocity vs time graph.</p>
-<div id="4d2e5239" class="cell">
+<div id="4d2e5239" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -375,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="polynomial-fits" class="level3">
 <h3 class="anchored" data-anchor-id="polynomial-fits">Polynomial fits</h3>
 <p>The data points in the velocity vs time graph seem to lie on a straight line, which can be expected for a <em>constant acceleration</em>. Using the NumPy <em>polynomial</em> package, you can fit a polynomial of degree 2 to the distance data, and a polynomial of degree 1 to the velocity data.</p>
-<div id="db5368d5" class="cell">
+<div id="db5368d5" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.polynomial <span class="im">import</span> Polynomial</span>
