@@ -3,6 +3,7 @@ project:
   output-dir: docs
   render:
   - "*.ipynb"
+  - "*.qmd"
   - "!utility/"
   - "!process_*"
 

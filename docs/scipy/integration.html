@@ -714,7 +714,7 @@ This is the value of the following expression (erf is the error function):</code
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>quad(f, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="co"># time the numerical integration with SciPy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>11.3 μs ± 53.7 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)</code></pre>
+<pre><code>11.1 μs ± 21.3 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)</code></pre>
 </div>
 </div>
 <div id="9e028f8e" class="cell" data-execution_count="5">
@@ -724,7 +724,7 @@ This is the value of the following expression (erf is the error function):</code
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sp.integrate(sp.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span>), (x, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)) <span class="co"># time the symbolic integration with SymPy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>16 ms ± 27.2 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)</code></pre>
+<pre><code>16.1 ms ± 149 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)</code></pre>
 </div>
 </div>
 <p>For this example, SciPy is more than 1000 times faster than SymPy! On the other hand, since the integral can be expressed in terms of a known function, it is possible to just determine the (indefinite) integral once and then calculate the definite integral using this function.</p>
@@ -735,7 +735,7 @@ This is the value of the following expression (erf is the error function):</code
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> sp.integrate(sp.exp(<span class="op">-</span>x<span class="op">**</span><span class="dv">2</span>), x) <span class="co"># indefinite integral</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>10.4 ms ± 19.3 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)</code></pre>
+<pre><code>10.4 ms ± 8.03 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)</code></pre>
 </div>
 </div>
 <div id="fdef0310" class="cell" data-execution_count="7">
@@ -751,7 +751,7 @@ This is the value of the following expression (erf is the error function):</code
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sp.N(sol.subs({x: <span class="dv">1</span>}) <span class="op">-</span> sol.subs({x: <span class="op">-</span><span class="dv">1</span>})) <span class="co"># definite integral using the indefinite integral</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>89.7 μs ± 294 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)</code></pre>
+<pre><code>90.2 μs ± 161 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)</code></pre>
 </div>
 </div>
 
