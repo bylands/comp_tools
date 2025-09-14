@@ -12,6 +12,9 @@ website:
     style: "docked"
     search: true
     contents:
+    - section: "Introduction"
+      contents:
+        - index.ipynb
     - section: "NumPy"
       contents:
         - "numpy/arrays.ipynb"
@@ -39,11 +42,56 @@ website:
         - "pint/pint.ipynb"
     - section: "Polars"
       contents:
-        - "polars/intro_polars.ipynb"
+        - "polars/polars.ipynb"
     - section: "Exercises"
       contents: 
-        - "numpy/exercises/*.ipynb"
+        - section: "Numpy Exercises"
+          contents:
+            - "numpy/exercises/lightbulb/lightbulb.ipynb"
+            - "numpy/exercises/battery/battery.ipynb"
+            - "numpy/exercises/power/power.ipynb"
+            - "numpy/exercises/vapour/vapour.ipynb"
+            - "numpy/exercises/decay/decay.ipynb"
+            - "numpy/exercises/work/work.ipynb"
+            - "numpy/exercises/torque/torque.ipynb"
+        - section: "SciPy Exercises"
+          contents:
+            - "scipy/exercises/electron_mass/electron_mass.ipynb"
+            - "scipy/exercises/linreg/linreg.ipynb"
+            - "scipy/exercises/boyle-mariotte/boyle-mariotte.ipynb"
+            - "scipy/exercises/lightbulb/lightbulb.ipynb"
+            - "scipy/exercises/loop/loop.ipynb"
+            - "scipy/exercises/coil/coil.ipynb"
+            - "scipy/exercises/snell/snell.ipynb"
+            - "scipy/exercises/lens/lens.ipynb"
+            - "scipy/exercises/radon/radon.ipynb"
+            - "scipy/exercises/decay/decay.ipynb"
+            - "scipy/exercises/roots/roots.ipynb"
+            - "scipy/exercises/biased_die/biased_die.ipynb"
+            - "scipy/exercises/battery_discharge/battery_discharge.ipynb"
+        - section: "SymPy Exercises"
+          contents:
+            - "sympy/exercises/resistor/resistor.ipynb"
+            - "sympy/exercises/current/current.ipynb"
+        - section: "Matplotlib Exercises"
+          contents:
+            - "matplotlib/exercises/acceleration/acceleration.ipynb"
+            - "matplotlib/exercises/lightbulb/lightbulb.ipynb"
+        - section: "Pint Exercises"
+          contents:
+            - "pint/exercises/pressure/pressure.ipynb"
+            - "pint/exercises/energy/energy.ipynb"
+            - "pint/exercises/circuit/circuit.ipynb"
+        - section: "Polars Exercises"
+          contents:
+            - "polars/exercises/temperature/temperature.ipynb"
+            - "polars/exercises/sunspots/sunspots.ipynb"
+            - "polars/exercises/minor_planets/minor_planets.ipynb"
+            - "polars/exercises/hr/hr.ipynb"
+            - "polars/exercises/isotopes/isotopes.ipynb"
+            - "polars/exercises/binding_energy/binding_energy.ipynb"
 
+            
 format:
   html:
     theme: cosmo
