@@ -1,0 +1,31 @@
+%! TEX TS-program = xelatex
+\documentclass{standalone}
+\usepackage{mathspec,xltxtra,xunicode}  % Unterstützung für OpenType
+\usepackage[european resistors, american inductors]{circuitikz}
+\usepackage{siunitx}
+
+\setmainfont{Minion Pro}[
+		Numbers={OldStyle,Proportional}
+]
+
+\setmathsfont(Digits,Latin,Greek)[Numbers={OldStyle,Proportional}]{Minion Pro}
+\exchangeforms{phi,theta}
+
+\begin{document}
+\begin{circuitikz}[voltage shift=1, line width=0.5]
+    \tikzset{R/.append style={bipoles/length=0.8cm}}
+    \draw
+    (0,0) to [battery1, invert, l={$\Delta V_1 = \qty{12}{V}$}] (0,4) 
+    to [resistor, i={$I_1$}, l={$R_a=\qty{1}{\kilo\ohm}$}, -*] (4,4)
+    to [short, i={$I_2$}] (5,4) to [resistor, l={$R_b=\qty{1}{\kilo\ohm}$}] (7,4) to [short] (8,4)
+    to [battery1, l={$\Delta V_2=\qty{6}{V}$}, -*] (8,0)
+    to [resistor, l={$R_c=\qty{1}{\kilo\ohm}$}, -*] (4,0)
+    to [resistor, l={$R_d=\qty{1}{\kilo\ohm}$}, -*] (0,0);
+    \draw
+    (4,4) to [short, i={$I_3$}] (4,3) to [resistor, l={$R_e=\qty{4}{\kilo\ohm}$}] (4,1) to [short] (4,0);
+    \draw
+    (0,0) to [short, i={$I_4$}] (0,-2)
+    to [resistor, l={$R_f=\qty{4}{\kilo\ohm}$}] (8,-2)
+    to [short] (8,0);
+\end{circuitikz}
+\end{document}
